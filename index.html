@@ -3,11 +3,79 @@
 
 <head>
     <meta charset="utf-8">
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Work+Sans:400,600" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="main.css">
     <title>Documentation</title>
+    
 </head>
 
 <body>
-    <h1>Test</h1>
+    
+    <header>
+        <nav id="menu">
+            <ul>
+                <!--<li id="title"><a href="#">2D Engine</a></li>-->
+                <li><a href="#" class="focus">About</a></li>
+                <li><a href="#">Features</a></li>
+                <li><a href="#">Pricing</a></li>
+                <li><a href="#" class="active">Learn</a></li>
+                <li><a href="#">Community</a></li>
+                <li id="login"><a href="#"><i class="fa fa-user"></i>&nbsp;&nbsp;Sign in</a></li>
+                <!--<li id="language"><a href="#"><i class="fa fa-globe"></i>&nbsp;&nbsp;Language</a></li>-->
+            </ul>
+        </nav>
+    </header>
+    
+    <div class="search"></div>
+    
+    <aside>
+        <ul id="menu-root">
+            <a href="#core">
+                <li class="menu-title">
+                    Core
+                </li>
+            </a>
+            <ul>
+                <a href="#game-object">
+                <li class="anchor">
+                    Game Object
+                </li>
+            </a>
+            </ul>
+        </ul>
+    </aside>
+    
+    <section id="doc">
+        <h1>API</h1>
+        
+        <!-- GameObject -->
+        <h2>GameObject</h2>
+        <span class="version">version 0.2.1</span>
+        <hr />
+        
+        <span class="menu-title">Properties</span>
+        <br />
+        <br />
+        <table>
+            <tr>
+                <td class="method">x</td>
+                <td>return x position of <code>GameObject</code></td>
+            </tr>
+            <tr>
+                <td class="method">y</td>
+                <td>return y position of <code>GameObject</code></td>
+            </tr>
+            <tr>
+                <td class="method">layer</td>
+                <td>return layer of <code>GameObject</code></td>
+            </tr>
+            <tr>
+                <td class="method">y</td>
+                <td>return y position of <code>GameObject</code></td>
+            </tr>
+        </table>
+    </section>    
 
 </body>
 
