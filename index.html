@@ -3,9 +3,15 @@
 
 <head>
     <meta charset="utf-8">
+    
     <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Work+Sans:400,600" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet">
+    
     <link rel="stylesheet" type="text/css" href="main.css">
+    
+    <script src="editor.js"></script>
+    
     <title>Documentation</title>
     
 </head>
@@ -38,10 +44,10 @@
             </a>
             <ul>
                 <a href="#game-object">
-                <li class="anchor">
-                    Game Object
-                </li>
-            </a>
+                    <li class="anchor">
+                        GameObject
+                    </li>
+                </a>
             </ul>
         </ul>
     </aside>
@@ -50,7 +56,7 @@
         <h1>API</h1>
         
         <!-- GameObject -->
-        <h2>GameObject</h2>
+        <h2><mark>new</mark> GameObject<mark>(name, x, y)</mark></h2>
         <span class="version">version 0.2.1</span>
         <hr />
         
@@ -59,23 +65,36 @@
         <br />
         <table>
             <tr>
-                <td class="method">x</td>
-                <td>return x position of <code>GameObject</code></td>
+                <td class="method">id</td>
+                <td><code>string</code></td>
             </tr>
             <tr>
+                <td class="method">name</td>
+                <td><code>string</code></td>
+            </tr>
+            <tr>
+                <td class="method">x</td>
+                <td><code>number</code></td>
+            </tr>            
+            <tr>
                 <td class="method">y</td>
-                <td>return y position of <code>GameObject</code></td>
+                <td><code>number</code></td>
             </tr>
             <tr>
                 <td class="method">layer</td>
-                <td>return layer of <code>GameObject</code></td>
-            </tr>
-            <tr>
-                <td class="method">y</td>
-                <td>return y position of <code>GameObject</code></td>
+                <td><code>number</code></td>
             </tr>
         </table>
-    </section>    
+        
+        <h3>GameObject.id</h3>
+        
+        <p>Get identifier of <code>GameObject</code></p>
+        
+        <span class="menu-title">Example</span>
+        
+        <pre>var o = new GameObject('Block', 20, 20);</pre>
+        
+    </section>
 
 </body>
 
