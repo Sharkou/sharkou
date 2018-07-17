@@ -16,31 +16,63 @@ function replaceAll (str) {
 function syntaxHighlights() {
     var codes = document.getElementsByTagName('pre');
     for (var i = 0; i < codes.length; i++) {
-        for (var attr in obj) {
-            var data = codes[i].textContent;        
-            data = data.replace(new RegExp(obj[attr].re, 'gi'), colorer('ok', 'blue'));
+        var data = codes[i].textContent;
+        for (var attr in obj) {            
+            var regex = new RegExp(obj[attr].re, 'gi');            
+            /*var text = regex.exec(data);*/            
+            var text = data.match(regex);
+            if (text) {
+                for (var n = 0; n < text.length; n++) {
+                    console.log(regex);
+                    data = data.replace(regex, colorer(text[n], obj[attr].color));
+                }   
+            }                     
             codes[i].innerHTML = data;
-        }        
+        }
     }
 }
 
 var obj = {
     string: {
-        re: '".+"',
-        color: 'green'
+        re: '\'.+\'',
+        color: '#d89333'
     },
-    equal: {
-        re: '=',
-        color: 'red'
+    number: {
+        re: ' [0-9]+',
+        color: '#85a300'
+    },
+    number2: {
+        re: '[0-9]+,',
+        color: '#85a300'
+    },
+    new: {
+        re: 'new',
+        color: '#6c9ef8'
     },
     const: {
         re: 'const',
-        color: 'green'
+        color: '#6c9ef8'
     },
     var: {
         re: 'var',
-        color: 'blue'
+        color: '#6c9ef8'
     },
+    function: {
+        re: 'function',
+        color: '#6c9ef8'
+    },
+    name: {
+        re: 'function [A-Za-z]+',
+        color: '#6c9ef8'
+    },
+    method: {
+        re: '\\.[A-Za-z]+',
+        color: '#b77fdb'
+    },
+    comment: {
+        re: '/\\*.*\\*/',
+        color: '#767676'
+    }
 };
 
 window.addEventListener('load', syntaxHighlights);
