@@ -17,14 +17,15 @@ function syntaxHighlights() {
     var codes = document.getElementsByTagName('pre');
     for (var i = 0; i < codes.length; i++) {
         var data = codes[i].textContent;
-        for (var attr in obj) {            
+        for (var attr in obj) {
             var regex = new RegExp(obj[attr].re, 'gi');            
             /*var text = regex.exec(data);*/            
             var text = data.match(regex);
             if (text) {
                 for (var n = 0; n < text.length; n++) {
-                    console.log(regex);
-                    data = data.replace(regex, colorer(text[n], obj[attr].color));
+                    
+                    console.log(data.match(regex));
+                    data = data.replace(regex, colorer(text[0], obj[attr].color));
                 }   
             }                     
             codes[i].innerHTML = data;
