@@ -8,6 +8,9 @@
     <link href="https://fonts.googleapis.com/css?family=Work+Sans:400,600" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet">
     
+    <!--<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">-->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.1/css/all.css" integrity="sha384-O8whS3fhG2OnA5Kas0Y9l3cfpmYjapjI0E4theH4iuMD+pLhbf6JI0jIMfYcK3yZ" crossorigin="anonymous">
+    
     <link rel="stylesheet" type="text/css" href="main.css">
     
     <script src="editor.js"></script>
@@ -43,9 +46,53 @@
                 </li>
             </a>
             <ul>
-                <a href="#game-object">
+                <a href="#object">
+                    <li class="anchor active">
+                        <i class="fas fa-vector-square"></i>Object
+                    </li>
+                </a>
+                <a href="#component">
+                     <li class="anchor">
+                        <i class="fas fa-puzzle-piece"></i>Component
+                    </li>
+                </a>
+                <a href="#resource">
+                     <li class="anchor">
+                        <i class="fas fa-images"></i>Resource
+                    </li>                    
+                </a>
+                <a href="#window">
+                     <li class="anchor">
+                        <i class="fas fa-desktop"></i>Window
+                    </li>                    
+                </a>
+            </ul>
+            <a href="#utils">
+                <li class="menu-title">
+                    Utils
+                </li>
+            </a>
+            <ul>
+                <a href="#mouse">
                     <li class="anchor">
-                        GameObject
+                        <div id="mouse-icon"><i class="fas fa-mouse-pointer"></i> Mouse</div>
+                    </li>
+                </a>
+                <a href="#keyboard">
+                    <li class="anchor">
+                        <i class="fas fa-keyboard"></i>Keyboard
+                    </li>
+                </a>
+            </ul>
+            <a href="#math">
+                <li class="menu-title">
+                    Math
+                </li>
+            </a>
+            <ul>
+                <a href="#vector">
+                    <li class="anchor-warning">
+                        <i class="fas fa-code-branch"></i>Vector
                     </li>
                 </a>
             </ul>
@@ -55,9 +102,9 @@
     <section id="doc">
         <h1>API</h1>
         
-        <!-- GameObject -->
-        <h2><mark>new</mark> GameObject<mark>(name, x, y)</mark></h2>
-        <span class="version">version 0.2.1</span>
+        <!-- Object -->
+        <h2 id="object"><mark>new</mark> Object<mark>()</mark></h2>
+        <!--<span class="version">version 0.2.1</span>-->
         <hr />
         
         <span class="menu-title">Properties</span>
@@ -83,25 +130,126 @@
             <tr>
                 <td class="method">layer</td>
                 <td><code>number</code></td>
+            </tr>            
+            <tr>
+                <td class="method">vx</td>
+                <td><code>number</code></td>
             </tr>
+            <tr>
+                <td class="method">vy</td>
+                <td><code>number</code></td>
+            </tr>
+            <tr class="warning">
+                <td class="method">rotation</td>
+                <td><code><a href="#vector">Vector</a></code></td>
+            </tr>
+            <tr class="warning">
+                <td class="method">scale</td>
+                <td><code><a href="#vector">Vector</a></code></td>
+            </tr>
+            <tr>
+                <td class="method">active</td>
+                <td><code>boolean</code></td>
+            </tr>
+            <tr>
+                <td class="method">childs</td>
+                <td><code><a href="#object">Object[]</a></code></td>
+            </tr>
+            <tr>
+                <td class="method">components</td>
+                <td><code><a href="#component">Component[]</a></code></td>
+            </tr>            
         </table>
         
-        <h3>GameObject.id</h3>
+        <!-- Property Object.id -->
+        <h3>Object.id</h3>
         
-        <p>Get identifier of <code>GameObject</code></p>
+        <p>Get identifier of <code><a href="#object">Object</a></code></p>
         
-        <p class="warning">Do not modify this property.</p>
+        <p class="warning"><i class="fas fa-exclamation-circle"></i>Do not modify this property.</p>
         
         <span class="menu-title">Example</span>
         
 <pre>
 /* Object identifier */
-var o = new GameObject('Block', 20, 10);
+var o = new Object();
 console.log(o.id);
 </pre>
         
+        <!-- Property Object.name -->
+        <h3>Object.name</h3>
+        
+        <p>Get name of <code><a href="#object">Object</a></code></p>
+        
+        <span class="menu-title">Example</span>
+        
+<pre>
+var particleSystem = new Object();
+particleSystem.name = 'Particle System';
+</pre>
+        
+        <!-- Property Object.x -->
+        <h3>Object.x</h3>
+        
+        <p>Get x position of <code><a href="#object">Object</a></code></p>
+        
+        <span class="menu-title">Example</span>
+        
+<pre>
+var player = new Object();
+player.x++;
+</pre>
+        
+        <!-- Property Object.y -->
+        <h3>Object.y</h3>
+        
+        <p>Get y position of <code><a href="#object">Object</a></code></p>
+        
+        <span class="menu-title">Example</span>
+        
+<pre>
+var player = new Object();
+player.y++;
+</pre>
+        
+        <!-- Property Object.layer -->
+        <h3>Object.layer</h3>
+        
+        <p>Get layer (z-index) of <code><a href="#object">Object</a></code></p>
+        
+        <span class="menu-title">Example</span>
+        
+<pre>
+var menu = new Object();
+menu.layer = 10;
+</pre>
+        
+        <!-- Property Object.layer -->
+        <h3>Object.vx</h3>
+        
+        <p>Get x velocity of <code><a href="#object">Object</a></code></p>
+        
+        <span class="menu-title">Example</span>
+        
+<pre>
+var bullet = new Object();
+bullet.vx = 8;
+</pre>
+        
+        <!-- Property Object.layer -->
+        <h3>Object.vy</h3>
+        
+        <p>Get y velocity of <code><a href="#object">Object</a></code></p>
+        
+        <span class="menu-title">Example</span>
+        
+<pre>
+var bullet = new Object();
+bullet.vy = 8;
+</pre>
+        
     </section>
-
+    
 </body>
 
 </html>
