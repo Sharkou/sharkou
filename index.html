@@ -13,7 +13,7 @@
     
     <link rel="stylesheet" type="text/css" href="main.css">
     
-    <script src="editor.js"></script>
+    <script src="editor.js"></script>    
     
     <title>Documentation</title>
     
@@ -50,7 +50,7 @@
                     <li class="anchor active">
                         <i class="fas fa-vector-square"></i>Object
                     </li>
-                </a>
+                </a>                
                 <a href="#component">
                      <li class="anchor">
                         <i class="fas fa-puzzle-piece"></i>Component
@@ -73,6 +73,11 @@
                 </li>
             </a>
             <ul>
+                <a href="#graphics">
+                    <li class="anchor">
+                        <i class="fas fa-drafting-compass"></i>Graphics
+                    </li>
+                </a>
                 <a href="#mouse">
                     <li class="anchor">
                         <div id="mouse-icon"><i class="fas fa-mouse-pointer"></i> Mouse</div>
@@ -106,11 +111,16 @@
         <h2 id="object"><mark>new</mark> Object<mark>()</mark></h2>
         <!--<span class="version">version 0.2.1</span>-->
         <hr />
+        <br />
         
         <span class="menu-title">Properties</span>
         <br />
         <br />
         <table>
+            <tr id="table-header">
+                <th>Name</th>
+                <th>Type</th> 
+            </tr>
             <tr>
                 <td class="method">id</td>
                 <td><code>string</code></td>
@@ -118,6 +128,10 @@
             <tr>
                 <td class="method">name</td>
                 <td><code>string</code></td>
+            </tr>
+            <tr>
+                <td class="method">active</td>
+                <td><code>boolean</code></td>
             </tr>
             <tr>
                 <td class="method">x</td>
@@ -130,15 +144,7 @@
             <tr>
                 <td class="method">layer</td>
                 <td><code>number</code></td>
-            </tr>            
-            <tr>
-                <td class="method">vx</td>
-                <td><code>number</code></td>
-            </tr>
-            <tr>
-                <td class="method">vy</td>
-                <td><code>number</code></td>
-            </tr>
+            </tr> 
             <tr class="warning">
                 <td class="method">rotation</td>
                 <td><code><a href="#vector">Vector</a></code></td>
@@ -146,11 +152,7 @@
             <tr class="warning">
                 <td class="method">scale</td>
                 <td><code><a href="#vector">Vector</a></code></td>
-            </tr>
-            <tr>
-                <td class="method">active</td>
-                <td><code>boolean</code></td>
-            </tr>
+            </tr>            
             <tr>
                 <td class="method">childs</td>
                 <td><code><a href="#object">Object[]</a></code></td>
@@ -160,6 +162,28 @@
                 <td><code><a href="#component">Component[]</a></code></td>
             </tr>            
         </table>
+        
+        <br />
+        
+        <span class="menu-title">Methods</span>
+        <br />
+        <br />
+        <table>
+            <tr id="table-header">
+                <th>Name</th>
+                <th>Return</th> 
+            </tr>
+            <tr>
+                <td class="method">update()</td>
+                <td><code>void</code></td>
+            </tr>
+            <tr>
+                <td class="method">draw()</td>
+                <td><code>void</code></td>
+            </tr>
+        </table>
+        
+        <h2>Properties</h2>
         
         <!-- Property Object.id -->
         <h3>Object.id</h3>
@@ -171,9 +195,8 @@
         <span class="menu-title">Example</span>
         
 <pre>
-/* Object identifier */
 var o = new Object();
-console.log(o.id);
+console.log(o.id); /* Object identifier */
 </pre>
         
         <!-- Property Object.name -->
@@ -188,6 +211,18 @@ var particleSystem = new Object();
 particleSystem.name = 'Particle System';
 </pre>
         
+        <!-- Property Object.active -->
+        <h3>Object.active</h3>
+        
+        <p>Active <code><a href="#object">Object</a></code></p>
+        
+        <span class="menu-title">Example</span>
+        
+<pre>
+var hud = new Object();
+hud.active = false;
+</pre>
+        
         <!-- Property Object.x -->
         <h3>Object.x</h3>
         
@@ -197,7 +232,7 @@ particleSystem.name = 'Particle System';
         
 <pre>
 var player = new Object();
-player.x++;
+player.x += 1;
 </pre>
         
         <!-- Property Object.y -->
@@ -209,7 +244,7 @@ player.x++;
         
 <pre>
 var player = new Object();
-player.y++;
+player.y += 1;
 </pre>
         
         <!-- Property Object.layer -->
@@ -225,7 +260,7 @@ menu.layer = 10;
 </pre>
         
         <!-- Property Object.layer -->
-        <h3>Object.vx</h3>
+        <!--<h3>Object.vx</h3>
         
         <p>Get x velocity of <code><a href="#object">Object</a></code></p>
         
@@ -234,10 +269,10 @@ menu.layer = 10;
 <pre>
 var bullet = new Object();
 bullet.vx = 8;
-</pre>
+</pre>-->
         
         <!-- Property Object.layer -->
-        <h3>Object.vy</h3>
+        <!--<h3>Object.vy</h3>
         
         <p>Get y velocity of <code><a href="#object">Object</a></code></p>
         
@@ -246,9 +281,265 @@ bullet.vx = 8;
 <pre>
 var bullet = new Object();
 bullet.vy = 8;
+</pre>-->
+        
+        <h2>Methods</h2>
+        
+        <h3>Object.update()</h3>
+        
+        <p><code>update</code> is called every frame if <code>Object</code> is <code>active</code></p>
+        
+        <span class="menu-title">Example</span>
+        
+<pre>
+var player = new Object();
+player.update = function() {
+    if (player.life == 0) {
+        player.active = false;
+    }
+};
+</pre>
+        
+        <h3>Object.draw()</h3>
+        
+        <p><code>draw</code> is called every frame if <code>Object</code> is <code>active</code></p>
+        
+        <span class="menu-title">Example</span>
+        
+<pre>
+var snow = new Object();
+snow.x = 0;
+snow.y = 0;
+snow.draw = function() {
+    circle(this.x, this.y);
+};
+</pre>
+        
+        <!--<h3>Object.moveTo(x, y)</h3>
+        
+        <p>Move <code><a href="#object">Object</a></code> to (x, y)</p>
+        
+        <span class="menu-title">Example</span>
+        
+<pre>
+var player = new Object();
+player.moveTo(10, 20);
+</pre>
+        
+        <h3>Object.translate(x, y)</h3>
+        
+        <p>Move <code><a href="#object">Object</a></code> of (x, y)</p>
+        
+        <span class="menu-title">Example</span>
+        
+<pre>
+var player = new Object();
+player.translate(1, 0);
+</pre>-->
+        
+        <!-- COMPONENT -->
+        
+        <h2 id="component"><mark>new</mark> Component<mark>()</mark></h2>
+        <!--<span class="version">version 0.2.1</span>-->
+        <hr />
+        <br />
+        
+        <span class="menu-title">Properties</span>
+        <br />
+        <br />
+        <table>
+            <tr id="table-header">
+                <th>Name</th>
+                <th>Type</th> 
+            </tr>
+            <tr>
+                <td class="method">name</td>
+                <td><code>string</code></td>
+            </tr>
+            <tr>
+                <td class="method">view</td>
+                <td><code>string</code></td>
+            </tr>
+        </table>        
+        
+        <h3>Component.name</h3>
+        
+        <p>Get name of <code><a href="#object">Component</a></code></p>
+        
+        <span class="menu-title">Example</span>
+        
+<pre>
+var collider = new Component();
+collider.name = 'Collider';
+</pre>
+        
+        <h3>Component.view</h3>
+        
+        <p>Get HTML view of <code><a href="#object">Component</a></code></p>
+        
+        <span class="menu-title">Example</span>
+        
+<pre>
+var color = new Component();
+color.view = 'Color';
+</pre>
+        
+        <!-- GRAPHICS -->
+        
+        <h2 id="graphics">Graphics</h2>
+        <!--<span class="version">version 0.2.1</span>-->
+        <hr />
+        <br />
+        
+        <span class="menu-title">Functions</span>
+        <br />
+        <br />
+        <table>
+            <tr id="table-header">
+                <th>Name</th>
+                <th>Return</th> 
+            </tr>
+            <tr>
+                <td class="method">point()</td>
+                <td><code>void</code></td>
+            </tr>
+            <tr>
+                <td class="method">line()</td>
+                <td><code>void</code></td>
+            </tr>
+            <tr>
+                <td class="method">rect()</td>
+                <td><code>void</code></td>
+            </tr>
+            <tr>
+                <td class="method">circle()</td>
+                <td><code>void</code></td>
+            </tr>
+        </table>
+        
+        <h3>point(x, y)</h3>
+        
+        <p>Draw a <code>point</code></p>
+        
+        <table>
+            <tr id="table-header">
+                <th>Parameter</th>
+                <th>Description</th> 
+            </tr>
+            <tr>
+                <td class="method">x</td>
+                <td><code>x position</code></td>
+            </tr>
+            <tr>
+                <td class="method">y</td>
+                <td><code>y position</code></td>
+            </tr>
+        </table>  
+        
+        <span class="menu-title">Example</span>
+        
+<pre>
+point(10, 30);
+</pre>
+        
+        <h3>line(x1, y1, x2, y2)</h3>
+        
+        <p>Draw a <code>rectangle</code></p>
+        
+        <table>
+            <tr id="table-header">
+                <th>Parameter</th>
+                <th>Description</th> 
+            </tr>
+            <tr>
+                <td class="method">x1</td>
+                <td><code>the x-coordinate of the first point</code></td>
+            </tr>
+            <tr>
+                <td class="method">y1</td>
+                <td><code>the y-coordinate of the first point</code></td>
+            </tr>
+            <tr>
+                <td class="method">x2</td>
+                <td><code>the x-coordinate of the second point</code></td>
+            </tr>
+            <tr>
+                <td class="method">y2</td>
+                <td><code>the y-coordinate of the second point</code></td>
+            </tr>
+        </table>  
+        
+        <span class="menu-title">Example</span>
+        
+<pre>
+line(0, 0, 20, 20);
+</pre>
+        
+        <h3>rect(x, y, w, h)</h3>
+        
+        <p>Draw a <code>rectangle</code></p>
+        
+        <table>
+            <tr id="table-header">
+                <th>Parameter</th>
+                <th>Description</th> 
+            </tr>
+            <tr>
+                <td class="method">x</td>
+                <td><code>x position</code></td>
+            </tr>
+            <tr>
+                <td class="method">y</td>
+                <td><code>y position</code></td>
+            </tr>
+            <tr>
+                <td class="method">w</td>
+                <td><code>width</code></td>
+            </tr>
+            <tr>
+                <td class="method">h</td>
+                <td><code>height</code></td>
+            </tr>
+        </table>  
+        
+        <span class="menu-title">Example</span>
+        
+<pre>
+rect(30, 20, 55, 55);
+</pre>
+        
+        <h3>circle(x, y, r)</h3>
+        
+        <p>Draw a <code>circle</code></p>
+        
+        <table>
+            <tr id="table-header">
+                <th>Parameter</th>
+                <th>Description</th> 
+            </tr>
+            <tr>
+                <td class="method">x</td>
+                <td><code>x position</code></td>
+            </tr>
+            <tr>
+                <td class="method">y</td>
+                <td><code>y position</code></td>
+            </tr>
+            <tr>
+                <td class="method">r</td>
+                <td><code>radius</code></td>
+            </tr>
+        </table>  
+        
+        <span class="menu-title">Example</span>
+        
+<pre>
+circle(50, 50, 4);
 </pre>
         
     </section>
+    
+    <script src="scroll.js"></script>
     
 </body>
 

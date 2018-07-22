@@ -26,7 +26,7 @@ function syntaxHighlights() {
                     
                     data.match(regex).forEach(function(e) {                        
                         data = data.replace(e, colorer(text[0], obj[attr].color));
-                        console.log(text[n]);
+                        // console.log(text[n]);
                     });
                     
                 }   
@@ -73,14 +73,66 @@ var obj = {
         re: 'function [A-Za-z]+',
         color: '#6c9ef8'
     },
-    method: {
+    /*method: {
         re: '\\.[A-Za-z]+',
+        color: '#b77fdb'
+    },*/
+    log: {
+        re: 'log',
+        color: '#b77fdb'
+    },
+    id: {
+        re: 'id',
+        color: '#b77fdb'
+    },
+    name: {
+        re: 'name',
+        color: '#b77fdb'
+    },
+    active: {
+        re: 'active',
+        color: '#b77fdb'
+    },
+    layer: {
+        re: 'layer',
+        color: '#b77fdb'
+    },    
+    _true: {
+        re: 'true',
+        color: '#d89333'
+    },
+    _false: {
+        re: 'false',
+        color: '#d89333'
+    },
+    this: {
+        re: 'this',
+        color: '#6c9ef8'
+    },
+    update: {
+        re: 'update',
+        color: '#b77fdb'
+    },
+    draw: {
+        re: 'draw',
+        color: '#b77fdb'
+    },
+    _x: {
+        re: 'x ',
+        color: '#b77fdb'
+    },
+    _y: {
+        re: 'y ',
+        color: '#b77fdb'
+    },
+    life: {
+        re: 'life',
         color: '#b77fdb'
     },
     comment: {
         re: '/\\*.*\\*/',
         color: '#767676'
-    }
+    },
 };
 
 window.addEventListener('load', syntaxHighlights);

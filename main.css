@@ -23,7 +23,7 @@ aside {
     margin-left: 400px;
     padding-left: 30px;
     padding-top: 100px;
-    width: 600px;
+    width: 50%;
 }
 
 h1 {
@@ -95,10 +95,11 @@ ul {
 
 a {
     text-decoration: none;
+    color: rgb(30, 100, 234);
 }
 
 a:active {
-    color: rgb(0, 0, 238);
+    /*color: rgb(0, 0, 238);*/
 }
 
 a:visited {
@@ -115,7 +116,7 @@ hr {
     height: 1px;
     border: none;
     background-color: #dddddd;
-    margin: 20px 0;
+    margin: 0 0;
 }
 
 .version {
@@ -147,6 +148,8 @@ table, th, td {
 
 th {
     padding: 10px;
+    font-weight: normal;
+    font-weight: bold;
 }
 
 td {
@@ -154,7 +157,7 @@ td {
 }
 
 tr:nth-child(odd) {
-    background-color: rgba(242, 242, 242, 0.5);
+    background-color: rgba(242, 242, 242, 0.4);
 }
 
 tr:hover {
@@ -262,4 +265,8 @@ i {
 
 #mouse-icon {
     margin-left: 5px;
+}
+
+#table-header {
+    
 }
