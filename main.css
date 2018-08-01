@@ -7,7 +7,7 @@ body {
     background-color: white/*#fafafa*/;
 }
 
-aside {
+#left-menu {
     width: 240px;
     position: fixed;
     top: 43px;
@@ -20,10 +20,10 @@ aside {
 }
 
 #doc {
-    margin-left: 400px;
+    margin-left: 300px;
     padding-left: 30px;
     padding-top: 100px;
-    width: 50%;
+    width: 40%;
 }
 
 h1 {
@@ -36,6 +36,11 @@ h1 {
 h2, h3 {
     font-weight: 500;
     margin-top: 40px;
+}
+
+h2 {
+    font-weight: 600;
+    font-size: 1.7em;
 }
 
 h3 {
@@ -169,6 +174,8 @@ tr:hover {
     height: 43px;
     line-height: 43px;
     font-family: 'Work Sans', sans-serif;
+    position: relative;
+    z-index: 3;
 }
 
 #menu ul {
@@ -216,8 +223,8 @@ tr:hover {
 }
 
 code {
-    background-color: #f8f8f8;
-    border: 1px dotted rgba(0, 0, 0, 0.2);
+    background-color: #f8f8f8;;
+    border: 1px dotted rgba(0, 0, 0, 0.1);
     padding: 3px;
     margin: 0 3px;
     color: rgb(30, 100, 234);
@@ -235,8 +242,8 @@ mark {
 
 pre {
     width: 100%;
-    background-color: #1d1f21;
-    color: #dddddd;
+    background-color: #f8f8f8;
+    color: #454545;
     padding: 20px;
     box-sizing: border-box;
     line-height: 1.5em;
@@ -269,4 +276,39 @@ i {
 
 #table-header {
     
+}
+
+.object {
+    font-size: 1.3em;
+}
+
+.object:hover {    
+    color: rgb(30, 100, 234);
+    border-bottom: 2px dashed rgb(30, 100, 234);
+}
+
+.objets {
+    line-height: 200%;
+}
+
+canvas {
+    position: absolute;
+    background-color: #c8c8c8;
+    height: 100%;
+    width: 300px;
+    left: calc(100% + 80px);;
+    top: 0;
+}
+
+aside {
+    
+}
+
+.example {
+    position: relative;
+    z-index: -1;
+}
+
+p {
+    line-height: 180%;
 }

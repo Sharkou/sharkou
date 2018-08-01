@@ -13,7 +13,6 @@
     
     <link rel="stylesheet" type="text/css" href="main.css">
     
-    <script src="editor.js"></script>    
     
     <title>Documentation</title>
     
@@ -38,7 +37,7 @@
     
     <!--<div class="search"></div>-->
     
-    <aside>
+    <aside id="left-menu">
         <ul id="menu-root">
             <a href="#core">
                 <li class="menu-title">
@@ -57,39 +56,64 @@
                     </li>
                 </a>
                 <a href="#resource">
-                     <li class="anchor">
+                     <li class="anchor-warning">
                         <i class="fas fa-images"></i>Resource
                     </li>                    
                 </a>
                 <a href="#window">
-                     <li class="anchor">
+                     <li class="anchor-warning">
                         <i class="fas fa-desktop"></i>Window
                     </li>                    
                 </a>
             </ul>
-            <a href="#utils">
+            
+            <a href="#graphics">
                 <li class="menu-title">
-                    Utils
+                    Graphics
                 </li>
             </a>
             <ul>
-                <a href="#graphics">
+                <a href="#shapes">
                     <li class="anchor">
-                        <i class="fas fa-drafting-compass"></i>Graphics
+                        <i class="fas fa-drafting-compass"></i>Shapes
                     </li>
                 </a>
-                <a href="#mouse">
+                <a href="#color">
                     <li class="anchor">
-                        <div id="mouse-icon"><i class="fas fa-mouse-pointer"></i> Mouse</div>
+                        <i class="fas fa-fill-drip"></i>Color
                     </li>
                 </a>
+                <a href="#image">
+                    <li class="anchor-warning">
+                        <div><i class="fa fa-image"></i>Image</div>
+                    </li>
+                </a>
+                <a href="#text">
+                    <li class="anchor-warning">
+                        <i class="fas fa-font"></i>Text
+                    </li>
+                </a>
+            </ul>
+            
+            <a href="#events">
+                <li class="menu-title">
+                    Events
+                </li>
+            </a>
+            <ul>               
                 <a href="#keyboard">
                     <li class="anchor">
                         <i class="fas fa-keyboard"></i>Keyboard
                     </li>
                 </a>
+                 <a href="#mouse">
+                    <li class="anchor">
+                        <div id="mouse-icon"><i class="fas fa-mouse-pointer"></i> Mouse</div>
+                    </li>
+                </a>
             </ul>
-            <a href="#math">
+            
+            <!--<a href="#math">
                 <li class="menu-title">
                     Math
                 </li>
@@ -100,197 +124,198 @@
                         <i class="fas fa-code-branch"></i>Vector
                     </li>
                 </a>
-            </ul>
+            </ul>-->
         </ul>
     </aside>
     
-    <section id="doc">
-        <h1>API</h1>
-        
-        <!-- Object -->
-        <h2 id="object"><mark>new</mark> Object<mark>()</mark></h2>
-        <!--<span class="version">version 0.2.1</span>-->
-        <hr />
-        <br />
-        
-        <span class="menu-title">Properties</span>
-        <br />
-        <br />
-        <table>
-            <tr id="table-header">
-                <th>Name</th>
-                <th>Type</th> 
-            </tr>
-            <tr>
-                <td class="method">id</td>
-                <td><code>string</code></td>
-            </tr>
-            <tr>
-                <td class="method">name</td>
-                <td><code>string</code></td>
-            </tr>
-            <tr>
-                <td class="method">active</td>
-                <td><code>boolean</code></td>
-            </tr>
-            <tr>
-                <td class="method">x</td>
-                <td><code>number</code></td>
-            </tr>            
-            <tr>
-                <td class="method">y</td>
-                <td><code>number</code></td>
-            </tr>
-            <tr>
-                <td class="method">layer</td>
-                <td><code>number</code></td>
-            </tr> 
-            <tr class="warning">
-                <td class="method">rotation</td>
-                <td><code><a href="#vector">Vector</a></code></td>
-            </tr>
-            <tr class="warning">
-                <td class="method">scale</td>
-                <td><code><a href="#vector">Vector</a></code></td>
-            </tr>            
-            <tr>
-                <td class="method">childs</td>
-                <td><code><a href="#object">Object[]</a></code></td>
-            </tr>
-            <tr>
-                <td class="method">components</td>
-                <td><code><a href="#component">Component[]</a></code></td>
-            </tr>            
-        </table>
-        
-        <br />
-        
-        <span class="menu-title">Methods</span>
-        <br />
-        <br />
-        <table>
-            <tr id="table-header">
-                <th>Name</th>
-                <th>Return</th> 
-            </tr>
-            <tr>
-                <td class="method">update()</td>
-                <td><code>void</code></td>
-            </tr>
-            <tr>
-                <td class="method">draw()</td>
-                <td><code>void</code></td>
-            </tr>
-        </table>
-        
-        <h2>Properties</h2>
-        
-        <!-- Property Object.id -->
-        <h3>Object.id</h3>
-        
-        <p>Get identifier of <code><a href="#object">Object</a></code></p>
-        
-        <p class="warning"><i class="fas fa-exclamation-circle"></i>Do not modify this property.</p>
-        
-        <span class="menu-title">Example</span>
-        
+    <main id="content">
+        <section id="doc">
+            <h1>API</h1>
+
+            <!-- Object -->
+            <h2 id="object"><mark>new</mark> Object<mark>()</mark></h2>
+            <!--<span class="version">version 0.2.1</span>-->
+            <hr />
+            <br />
+
+            <span class="menu-title">Properties</span>
+            <br />
+            <br />
+            <table>
+                <tr id="table-header">
+                    <th>Name</th>
+                    <th>Type</th> 
+                </tr>
+                <tr>
+                    <td class="method">id</td>
+                    <td><code>string</code></td>
+                </tr>
+                <tr>
+                    <td class="method">name</td>
+                    <td><code>string</code></td>
+                </tr>
+                <tr>
+                    <td class="method">active</td>
+                    <td><code>boolean</code></td>
+                </tr>
+                <tr>
+                    <td class="method">x</td>
+                    <td><code>number</code></td>
+                </tr>            
+                <tr>
+                    <td class="method">y</td>
+                    <td><code>number</code></td>
+                </tr>
+                <tr>
+                    <td class="method">layer</td>
+                    <td><code>number</code></td>
+                </tr> 
+                <tr class="warning">
+                    <td class="method">rotation</td>
+                    <td><code><a href="#vector">Vector</a></code></td>
+                </tr>
+                <tr class="warning">
+                    <td class="method">scale</td>
+                    <td><code><a href="#vector">Vector</a></code></td>
+                </tr>            
+                <tr>
+                    <td class="method">childs</td>
+                    <td><code><a href="#object">Object[]</a></code></td>
+                </tr>
+                <tr>
+                    <td class="method">components</td>
+                    <td><code><a href="#component">Component[]</a></code></td>
+                </tr>            
+            </table>
+
+            <br />
+
+            <span class="menu-title">Methods</span>
+            <br />
+            <br />
+            <table>
+                <tr id="table-header">
+                    <th>Name</th>
+                    <th>Return</th> 
+                </tr>
+                <tr>
+                    <td class="method">update()</td>
+                    <td><code>void</code></td>
+                </tr>
+                <tr>
+                    <td class="method">draw()</td>
+                    <td><code>void</code></td>
+                </tr>
+            </table>
+
+            <h2>Properties</h2>
+
+            <!-- Property Object.id -->
+            <h3>Object.id</h3>
+
+            <p>Get identifier of <code><a href="#object">Object</a></code></p>
+
+            <p class="warning"><i class="fas fa-exclamation-circle"></i>Do not modify this property.</p>
+
+            <span class="menu-title">Example</span>
+
 <pre>
 var o = new Object();
 console.log(o.id); /* Object identifier */
 </pre>
-        
-        <!-- Property Object.name -->
-        <h3>Object.name</h3>
-        
-        <p>Get name of <code><a href="#object">Object</a></code></p>
-        
-        <span class="menu-title">Example</span>
-        
+
+            <!-- Property Object.name -->
+            <h3>Object.name</h3>
+
+            <p>Get name of <code><a href="#object">Object</a></code></p>
+
+            <span class="menu-title">Example</span>
+
 <pre>
 var particleSystem = new Object();
 particleSystem.name = 'Particle System';
 </pre>
-        
-        <!-- Property Object.active -->
-        <h3>Object.active</h3>
-        
-        <p>Active <code><a href="#object">Object</a></code></p>
-        
-        <span class="menu-title">Example</span>
-        
+
+            <!-- Property Object.active -->
+            <h3>Object.active</h3>
+
+            <p>Active <code><a href="#object">Object</a></code></p>
+
+            <span class="menu-title">Example</span>
+
 <pre>
 var hud = new Object();
 hud.active = false;
 </pre>
-        
-        <!-- Property Object.x -->
-        <h3>Object.x</h3>
-        
-        <p>Get x position of <code><a href="#object">Object</a></code></p>
-        
-        <span class="menu-title">Example</span>
-        
+
+            <!-- Property Object.x -->
+            <h3>Object.x</h3>
+
+            <p>Get x position of <code><a href="#object">Object</a></code></p>
+
+            <span class="menu-title">Example</span>
+
 <pre>
 var player = new Object();
 player.x += 1;
 </pre>
-        
-        <!-- Property Object.y -->
-        <h3>Object.y</h3>
-        
-        <p>Get y position of <code><a href="#object">Object</a></code></p>
-        
-        <span class="menu-title">Example</span>
-        
+
+            <!-- Property Object.y -->
+            <h3>Object.y</h3>
+
+            <p>Get y position of <code><a href="#object">Object</a></code></p>
+
+            <span class="menu-title">Example</span>
+
 <pre>
 var player = new Object();
 player.y += 1;
 </pre>
-        
-        <!-- Property Object.layer -->
-        <h3>Object.layer</h3>
-        
-        <p>Get layer (z-index) of <code><a href="#object">Object</a></code></p>
-        
-        <span class="menu-title">Example</span>
-        
+
+            <!-- Property Object.layer -->
+            <h3>Object.layer</h3>
+
+            <p>Get layer (z-index) of <code><a href="#object">Object</a></code></p>
+
+            <span class="menu-title">Example</span>
+
 <pre>
 var menu = new Object();
 menu.layer = 10;
 </pre>
-        
-        <!-- Property Object.layer -->
-        <!--<h3>Object.vx</h3>
-        
-        <p>Get x velocity of <code><a href="#object">Object</a></code></p>
-        
-        <span class="menu-title">Example</span>
-        
-<pre>
-var bullet = new Object();
-bullet.vx = 8;
-</pre>-->
-        
-        <!-- Property Object.layer -->
-        <!--<h3>Object.vy</h3>
-        
-        <p>Get y velocity of <code><a href="#object">Object</a></code></p>
-        
-        <span class="menu-title">Example</span>
-        
-<pre>
-var bullet = new Object();
-bullet.vy = 8;
-</pre>-->
-        
-        <h2>Methods</h2>
-        
-        <h3>Object.update()</h3>
-        
-        <p><code>update</code> is called every frame if <code>Object</code> is <code>active</code></p>
-        
-        <span class="menu-title">Example</span>
-        
+
+            <!-- Property Object.layer -->
+            <!--<h3>Object.vx</h3>
+
+            <p>Get x velocity of <code><a href="#object">Object</a></code></p>
+
+            <span class="menu-title">Example</span>
+
+    <pre>
+    var bullet = new Object();
+    bullet.vx = 8;
+    </pre>-->
+
+            <!-- Property Object.layer -->
+            <!--<h3>Object.vy</h3>
+
+            <p>Get y velocity of <code><a href="#object">Object</a></code></p>
+
+            <span class="menu-title">Example</span>
+
+    <pre>
+    var bullet = new Object();
+    bullet.vy = 8;
+    </pre>-->
+
+            <h2>Methods</h2>
+
+            <h3>Object.update()</h3>
+
+            <p><code>update</code> is called every frame if <code>Object</code> is <code>active</code></p>
+
+            <span class="menu-title">Example</span>
+
 <pre>
 var player = new Object();
 player.update = function() {
@@ -299,13 +324,13 @@ player.update = function() {
     }
 };
 </pre>
-        
-        <h3>Object.draw()</h3>
-        
-        <p><code>draw</code> is called every frame if <code>Object</code> is <code>active</code></p>
-        
-        <span class="menu-title">Example</span>
-        
+
+            <h3>Object.draw()</h3>
+
+            <p><code>draw</code> is called every frame if <code>Object</code> is <code>active</code></p>
+
+            <span class="menu-title">Example</span>
+
 <pre>
 var snow = new Object();
 snow.x = 0;
@@ -314,231 +339,675 @@ snow.draw = function() {
     circle(this.x, this.y);
 };
 </pre>
-        
-        <!--<h3>Object.moveTo(x, y)</h3>
-        
-        <p>Move <code><a href="#object">Object</a></code> to (x, y)</p>
-        
-        <span class="menu-title">Example</span>
-        
-<pre>
-var player = new Object();
-player.moveTo(10, 20);
-</pre>
-        
-        <h3>Object.translate(x, y)</h3>
-        
-        <p>Move <code><a href="#object">Object</a></code> of (x, y)</p>
-        
-        <span class="menu-title">Example</span>
-        
-<pre>
-var player = new Object();
-player.translate(1, 0);
-</pre>-->
-        
-        <!-- COMPONENT -->
-        
-        <h2 id="component"><mark>new</mark> Component<mark>()</mark></h2>
-        <!--<span class="version">version 0.2.1</span>-->
-        <hr />
-        <br />
-        
-        <span class="menu-title">Properties</span>
-        <br />
-        <br />
-        <table>
-            <tr id="table-header">
-                <th>Name</th>
-                <th>Type</th> 
-            </tr>
-            <tr>
-                <td class="method">name</td>
-                <td><code>string</code></td>
-            </tr>
-            <tr>
-                <td class="method">view</td>
-                <td><code>string</code></td>
-            </tr>
-        </table>        
-        
-        <h3>Component.name</h3>
-        
-        <p>Get name of <code><a href="#object">Component</a></code></p>
-        
-        <span class="menu-title">Example</span>
-        
+
+            <!--<h3>Object.moveTo(x, y)</h3>
+
+            <p>Move <code><a href="#object">Object</a></code> to (x, y)</p>
+
+            <span class="menu-title">Example</span>
+
+    <pre>
+    var player = new Object();
+    player.moveTo(10, 20);
+    </pre>
+
+            <h3>Object.translate(x, y)</h3>
+
+            <p>Move <code><a href="#object">Object</a></code> of (x, y)</p>
+
+            <span class="menu-title">Example</span>
+
+    <pre>
+    var player = new Object();
+    player.translate(1, 0);
+    </pre>-->
+
+            <!-- COMPONENT -->
+
+            <h2 id="component"><mark>new</mark> Component<mark>()</mark></h2>
+            <!--<span class="version">version 0.2.1</span>-->
+            <hr />
+            <br />
+
+            <span class="menu-title">Properties</span>
+            <br />
+            <br />
+            <table>
+                <tr id="table-header">
+                    <th>Name</th>
+                    <th>Type</th> 
+                </tr>
+                <tr>
+                    <td class="method">name</td>
+                    <td><code>string</code></td>
+                </tr>
+                <tr>
+                    <td class="method">view</td>
+                    <td><code>string</code></td>
+                </tr>
+            </table>        
+
+            <h3>Component.name</h3>
+
+            <p>Get name of <code><a href="#object">Component</a></code></p>
+            
+
+            <span class="menu-title">Example</span>
+
 <pre>
 var collider = new Component();
 collider.name = 'Collider';
 </pre>
-        
-        <h3>Component.view</h3>
-        
-        <p>Get HTML view of <code><a href="#object">Component</a></code></p>
-        
-        <span class="menu-title">Example</span>
-        
+
+            <h3>Component.view</h3>
+
+            <p>Get HTML view of <code><a href="#object">Component</a></code></p>
+            
+
+            <span class="menu-title">Example</span>
+
 <pre>
 var color = new Component();
 color.view = 'Color';
 </pre>
-        
-        <!-- GRAPHICS -->
-        
-        <h2 id="graphics">Graphics</h2>
-        <!--<span class="version">version 0.2.1</span>-->
-        <hr />
+
+            <!-- GRAPHICS -->
+
+            <h2 id="shapes">Shapes</h2>
+            <!--<span class="version">version 0.2.1</span>-->
+            <hr />
+            <br />
+
+            <span class="menu-title">Functions</span>
+            <br />
+            <p class="objets">
+                <a href="#point" class="object">point()</a>
+                <br />
+                <a href="#line" class="object">line()</a>
+                <br />
+                <a href="#rect" class="object">rect()</a>
+                <br />
+                <a href="#circle" class="object">circle()</a>
+            </p>
+
+            <h3 id="point">point(x, y)</h3>
+
+            <p>Draws a <code>point</code> to the screen.</p>
+            
+            <br />
+
+            <table>
+                <tr id="table-header">
+                    <th>Parameter</th>
+                    <th>Description</th> 
+                </tr>
+                <tr>
+                    <td class="method">x</td>
+                    <td class="method">x position</td>
+                </tr>
+                <tr>
+                    <td class="method">y</td>
+                    <td class="method">y position</td>
+                </tr>
+            </table>  
+            
+            <br />
+
+            <span class="menu-title">Example</span>
+            
+            <aside class="example">
+
+<pre>
+var o = new Object();
+o.draw = function() {
+    point(20, 20);
+    stroke('red');
+    point(50, 80);
+    stroke('white');
+}
+</pre>
+                <canvas id="canvas-point"></canvas>
+            
+            </aside>
+
+            <h3 id="line">line(x1, y1, x2, y2)</h3>
+
+            <p>Draws a <code>line</code> (a direct path between two points) to the screen.</p>
+            
+            <br />
+
+            <table>
+                <tr id="table-header">
+                    <th>Parameter</th>
+                    <th>Description</th> 
+                </tr>
+                <tr>
+                    <td class="method">x1</td>
+                    <td class="method">the x-coordinate of the first point</td>
+                </tr>
+                <tr>
+                    <td class="method">y1</td>
+                    <td class="method">the y-coordinate of the first point</td>
+                </tr>
+                <tr>
+                    <td class="method">x2</td>
+                    <td class="method">the x-coordinate of the second point</td>
+                </tr>
+                <tr>
+                    <td class="method">y2</td>
+                    <td class="method">the y-coordinate of the second point</td>
+                </tr>
+            </table>  
+            
+            <br />
+
+            <span class="menu-title">Example</span>
+            
+            <aside class="example">
+
+<pre>
+var o = new Object();
+o.draw = function() {
+    line(0, 0, 100, 100);
+    stroke('blue');
+}
+</pre>
+                <canvas id="canvas-line"></canvas>
+            
+            </aside>
+
+            <h3 id="rect">rect(x, y, w, h)</h3>
+
+            <p>Draws a <code>rectangle</code> to the screen.</p>
+            
+            <br />
+
+            <table>
+                <tr id="table-header">
+                    <th>Parameter</th>
+                    <th>Description</th> 
+                </tr>
+                <tr>
+                    <td class="method">x</td>
+                    <td class="method">x position</td>
+                </tr>
+                <tr>
+                    <td class="method">y</td>
+                    <td class="method">y position</td>
+                </tr>
+                <tr>
+                    <td class="method">w</td>
+                    <td class="method">width</td>
+                </tr>
+                <tr>
+                    <td class="method">h</td>
+                    <td class="method">height</td>
+                </tr>
+            </table>  
+            
+            <br />
+
+            <span class="menu-title">Example</span>
+            
+            <aside class="example">
+
+<pre>
+var o = new Object();
+o.draw = function() {
+    rect(50, 50, 50, 20);
+    stroke('blue');
+}
+</pre>
+                <canvas id="canvas-rect"></canvas>
+            
+            </aside>
+
+            <h3 id="circle">circle(x, y, r)</h3>
+
+            <p>Draws a <code>circle</code> to the screen.</p>
+            
+            <br />
+
+            <table>
+                <tr id="table-header">
+                    <th>Parameter</th>
+                    <th>Description</th> 
+                </tr>
+                <tr>
+                    <td class="method">x</td>
+                    <td class="method">x position</td>
+                </tr>
+                <tr>
+                    <td class="method">y</td>
+                    <td class="method">y position</td>
+                </tr>
+                <tr>
+                    <td class="method">r</td>
+                    <td class="method">radius</td>
+                </tr>
+            </table>  
+            
+            <br />
+
+            <span class="menu-title">Example</span>
+            
+            <aside class="example">
+
+<pre>
+var o = new Object();
+o.draw = function() {
+    circle(150, 50, 20);
+    fill('green');
+}
+</pre>
+                <canvas id="canvas-circle"></canvas>
+            
+            </aside>
+
+
+            <!-- COLOR -->
+
+            <h2 id="color">Color</h2>
+            <!--<span class="version">version 0.2.1</span>-->
+            <hr />
+            <br />
+
+            <span class="menu-title">Functions</span>
+            <br />
+            <p class="objets">
+                <a href="#fill" class="object">fill()</a>
+                <br />
+                <a href="#stroke" class="object">stroke()</a>
+                <br />
+                <a href="#strokeWeight" class="object">strokeWeight()</a>
+            </p>
+
+            <h3 id="fill">fill(color)</h3>
+
+            <p>Sets the <code>color</code> used to fill <code>shapes</code>. RGB, RGBA and Hex CSS color strings and all named color strings are supported.</p>
+            
+            <br />
+
+            <table>
+                <tr id="table-header">
+                    <th>Parameter</th>
+                    <th>Description</th> 
+                </tr>
+                <tr>
+                    <td class="method">color</td>
+                    <td class="method">color</td>
+                </tr>
+            </table> 
+            
+            <br />
+
+            <span class="menu-title">Example</span>
+
+            <aside class="example">
+<pre>
+var o = new Object();
+o.draw = function() {
+    circle(50, 50, 30);
+    fill('red');
+}
+</pre>
+                <canvas id="canvas-fill"></canvas>
+            
+            </aside>
+
+            <h3 id="stroke">stroke(color)</h3>
+
+            <p>Sets the <code>color</code> used to draw lines and borders around <code>shapes</code>. RGB, RGBA and Hex CSS color strings and all named color strings are supported.</p>
+            
+            <br />
+
+            <table>
+                <tr id="table-header">
+                    <th>Parameter</th>
+                    <th>Description</th> 
+                </tr>
+                <tr>
+                    <td class="method">color</td>
+                    <td class="method">color</td>
+                </tr>
+            </table> 
+            
+            <br />
+
+            <span class="menu-title">Example</span>
+            
+            <aside class="example">
+
+<pre>
+var o = new Object();
+o.draw = function() {
+    circle(50, 50, 30);
+    stroke('red');
+}
+</pre>                
+                <canvas id="canvas-stroke"></canvas>
+            
+            </aside>
+
+            <h3 id="strokeWeight">strokeWeight(weight)</h3>
+
+            <p>Sets the width of the <code>stroke</code> used for lines, points, and the border around <code>shapes</code>. All widths are set in units of pixels.</p>
+            
+            <br />
+
+            <table>
+                <tr id="table-header">
+                    <th>Parameter</th>
+                    <th>Description</th> 
+                </tr>
+                <tr>
+                    <td class="method">weight</td>
+                    <td class="method">width (in pixels) of the stroke</td>
+                </tr>
+            </table>  
+            
+            <br />
+
+            <span class="menu-title">Example</span>
+            
+            <aside class="example">
+
+<pre>
+var o = new Object();
+o.draw = function() {
+    circle(50, 50, 30);
+    strokeWeight(5);
+    stroke('red');
+}
+</pre>
+                <canvas id="canvas-strokeWeight"></canvas>
+            
+            </aside>
+
+
+            <!-- KEYBOARD -->
+
+            <h2 id="keyboard">Keyboard</h2>
+            <!--<span class="version">version 0.2.1</span>-->
+            <hr />
+            <br />
+
+            <span class="menu-title">Attributes</span>
+            <br />
+            <p class="objets">
+                <a href="#keyPressed" class="object">keyPressed</a>
+                <br />
+                <a href="#keyReleased" class="object">keyReleased</a>
+                <br />
+                <a href="#key" class="object">key</a>
+            </p>
+
+            <h3 id="keyPressed">keyPressed</h3>
+
+            <p>The system variable <code>keyPressed</code> is <code>true</code> if any key is pressed and <code>false</code> if no keys are pressed.</p>
+            
+            <br />
+
+            <table>
+                <tr id="table-header">
+                    <th>Variable</th>
+                    <th>Type</th> 
+                </tr>
+                <tr>
+                    <td class="method">keyPressed</td>
+                    <td class="method"><code>boolean</code></td>
+                </tr>
+            </table>  
+            
+            <br />
+
+            <span class="menu-title">Example</span>
+            
+            <aside class="example">
+
+<pre>
+var o = new Object();
+o.update = function() {
+    if(keyPressed) {
+        o.active = false;
+    }
+}
+</pre>
+                
+                <canvas id="canvas-fill"></canvas>
+            
+            </aside>
+
+            <h3 id="keyReleased">keyReleased</h3>
+
+            <p>The system variable <code>keyReleased</code> is <code>true</code> if any key is released and <code>false</code> if no keys are pressed.</p>
+            
+            <br />
+
+            <table>
+                <tr id="table-header">
+                    <th>Variable</th>
+                    <th>Type</th> 
+                </tr>
+                <tr>
+                    <td class="method">keyReleased</td>
+                    <td class="method"><code>boolean</code></td>
+                </tr>
+            </table> 
+            
+            <br />
+
+            <span class="menu-title">Example</span>
+
+<pre>
+var o = new Object();
+o.update = function() {
+    if(keyReleased) {
+        o.active = true;
+    }
+}
+</pre>
+
+            <h3 id="key">key</h3>
+
+            <p>The system variable key always contains the value of the most recent key on the keyboard that was typed.</p>
+            
+            <br />
+
+            <table>
+                <tr id="table-header">
+                    <th>Variable</th>
+                    <th>Type</th> 
+                </tr>
+                <tr>
+                    <td class="method">key</td>
+                    <td class="method"><code>string</code></td>
+                </tr>
+            </table> 
+            
+            <br />
+
+            <span class="menu-title">Example</span>
+
+<pre>
+var o = new Object();
+o.update = function() {
+    if(keyPressed) {
+        if(key === 'D') {
+            o.translate(1, 0);
+        }
+    }
+}
+</pre>
+
+            
+            <!-- MOUSE -->
+
+            <h2 id="mouse">Mouse</h2>
+            <!--<span class="version">version 0.2.1</span>-->
+            <hr />
+            <br />
+
+            <span class="menu-title">Attributes</span>
+            <br />
+            <p class="objets">
+                <a href="#mousePressed" class="object">mousePressed</a>
+                <br />
+                <a href="#mouseReleased" class="object">mouseReleased</a>
+                <br />
+                <a href="#mouseX" class="object">mouseX</a>
+                <br />
+                <a href="#mouseY" class="object">mouseY</a>
+            </p>
+
+            <h3 id="mousePressed">mousePressed</h3>
+
+            <p>The system variable <code>mousePressed</code> is <code>true</code> if the mouse is pressed and <code>false</code> if not.</p>
+            
+            <br />
+
+            <table>
+                <tr id="table-header">
+                    <th>Variable</th>
+                    <th>Type</th> 
+                </tr>
+                <tr>
+                    <td class="method">mousePressed</td>
+                    <td class="method"><code>boolean</code></td>
+                </tr>
+            </table>  
+            
+            <br />
+
+            <span class="menu-title">Example</span>
+            
+            <aside class="example">
+
+<pre>
+var o = new Object();
+o.draw = function() {
+    if(mousePressed) {
+        circle(100, 100, 30);
+        fill('#666');
+    }
+}
+</pre>
+                
+                <canvas id="canvas-mousePressed"></canvas>
+            
+            </aside>
+
+            <h3 id="mouseReleased">mouseReleased</h3>
+
+            <p>The system variable <code>mouseReleased</code> is <code>true</code> if the mouse is released and <code>false</code> if not.</p>
+            
+            <br />
+
+            <table>
+                <tr id="table-header">
+                    <th>Variable</th>
+                    <th>Type</th> 
+                </tr>
+                <tr>
+                    <td class="method">mouseReleased</td>
+                    <td class="method"><code>boolean</code></td>
+                </tr>
+            </table>  
+            
+            <br />
+
+            <span class="menu-title">Example</span>
+            
+            <aside class="example">
+
+<pre>
+var o = new Object();
+o.draw = function() {
+    if(mouseReleased) {
+        circle(100, 100, 30);
+        fill('black');
+    }
+}
+</pre>
+                
+                <canvas id="canvas-mouseReleased"></canvas>
+            
+            </aside>
+
+            <h3 id="mouseX">mouseX</h3>
+
+            <p>The system variable mouseX always contains the current horizontal position of the mouse, relative to (0, 0) of the canvas.</p>
+            
+            <br />
+
+            <table>
+                <tr id="table-header">
+                    <th>Variable</th>
+                    <th>Type</th> 
+                </tr>
+                <tr>
+                    <td class="method">mouseX</td>
+                    <td class="method"><code>number</code></td>
+                </tr>
+            </table> 
+            
+            <br />
+
+            <span class="menu-title">Example</span>
+            
+            <aside class="example">
+
+<pre>
+var o = new Object();
+o.draw = function() {
+    line(mouseX, 0, mouseX, 100);
+}
+</pre>
+                <canvas id="canvas-mouseX"></canvas>
+
+            </aside>
+            
+            <h3 id="mouseY">mouseY</h3>
+
+            <p>The system variable mouseY always contains the current vertical position of the mouse, relative to (0, 0) of the canvas.</p>
+            
+            <br />
+
+            <table>
+                <tr id="table-header">
+                    <th>Variable</th>
+                    <th>Type</th> 
+                </tr>
+                <tr>
+                    <td class="method">mouseY</td>
+                    <td class="method"><code>number</code></td>
+                </tr>
+            </table> 
+            
+            <br />
+
+            <span class="menu-title">Example</span>
+            
+            <aside class="example">
+
+<pre>
+var o = new Object();
+o.draw = function() {
+    line(0, 0, mouseX, mouseY);
+}
+</pre>
+            <canvas id="canvas-mouseY"></canvas>
+
+        </aside>
+
         <br />
-        
-        <span class="menu-title">Functions</span>
-        <br />
-        <br />
-        <table>
-            <tr id="table-header">
-                <th>Name</th>
-                <th>Return</th> 
-            </tr>
-            <tr>
-                <td class="method">point()</td>
-                <td><code>void</code></td>
-            </tr>
-            <tr>
-                <td class="method">line()</td>
-                <td><code>void</code></td>
-            </tr>
-            <tr>
-                <td class="method">rect()</td>
-                <td><code>void</code></td>
-            </tr>
-            <tr>
-                <td class="method">circle()</td>
-                <td><code>void</code></td>
-            </tr>
-        </table>
-        
-        <h3>point(x, y)</h3>
-        
-        <p>Draw a <code>point</code></p>
-        
-        <table>
-            <tr id="table-header">
-                <th>Parameter</th>
-                <th>Description</th> 
-            </tr>
-            <tr>
-                <td class="method">x</td>
-                <td><code>x position</code></td>
-            </tr>
-            <tr>
-                <td class="method">y</td>
-                <td><code>y position</code></td>
-            </tr>
-        </table>  
-        
-        <span class="menu-title">Example</span>
-        
-<pre>
-point(10, 30);
-</pre>
-        
-        <h3>line(x1, y1, x2, y2)</h3>
-        
-        <p>Draw a <code>rectangle</code></p>
-        
-        <table>
-            <tr id="table-header">
-                <th>Parameter</th>
-                <th>Description</th> 
-            </tr>
-            <tr>
-                <td class="method">x1</td>
-                <td><code>the x-coordinate of the first point</code></td>
-            </tr>
-            <tr>
-                <td class="method">y1</td>
-                <td><code>the y-coordinate of the first point</code></td>
-            </tr>
-            <tr>
-                <td class="method">x2</td>
-                <td><code>the x-coordinate of the second point</code></td>
-            </tr>
-            <tr>
-                <td class="method">y2</td>
-                <td><code>the y-coordinate of the second point</code></td>
-            </tr>
-        </table>  
-        
-        <span class="menu-title">Example</span>
-        
-<pre>
-line(0, 0, 20, 20);
-</pre>
-        
-        <h3>rect(x, y, w, h)</h3>
-        
-        <p>Draw a <code>rectangle</code></p>
-        
-        <table>
-            <tr id="table-header">
-                <th>Parameter</th>
-                <th>Description</th> 
-            </tr>
-            <tr>
-                <td class="method">x</td>
-                <td><code>x position</code></td>
-            </tr>
-            <tr>
-                <td class="method">y</td>
-                <td><code>y position</code></td>
-            </tr>
-            <tr>
-                <td class="method">w</td>
-                <td><code>width</code></td>
-            </tr>
-            <tr>
-                <td class="method">h</td>
-                <td><code>height</code></td>
-            </tr>
-        </table>  
-        
-        <span class="menu-title">Example</span>
-        
-<pre>
-rect(30, 20, 55, 55);
-</pre>
-        
-        <h3>circle(x, y, r)</h3>
-        
-        <p>Draw a <code>circle</code></p>
-        
-        <table>
-            <tr id="table-header">
-                <th>Parameter</th>
-                <th>Description</th> 
-            </tr>
-            <tr>
-                <td class="method">x</td>
-                <td><code>x position</code></td>
-            </tr>
-            <tr>
-                <td class="method">y</td>
-                <td><code>y position</code></td>
-            </tr>
-            <tr>
-                <td class="method">r</td>
-                <td><code>radius</code></td>
-            </tr>
-        </table>  
-        
-        <span class="menu-title">Example</span>
-        
-<pre>
-circle(50, 50, 4);
-</pre>
-        
-    </section>
+
+        </section>
     
+    </main>
+    
+    <script src="editor.js"></script>    
+    <script src="canvas.js"></script>
     <script src="scroll.js"></script>
     
 </body>

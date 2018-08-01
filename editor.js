@@ -36,42 +36,52 @@ function syntaxHighlights() {
     }
 }
 
+var color = {
+    default: '#535353',
+    string: '#e88500',
+    number: '#6d8600',
+    keyword: 'rgb(30, 100, 234)',
+    variable: '#b95ae3',
+    comment: '#949494',
+    function: 'rgb(30, 100, 234)'
+};
+
 var obj = {
     string: {
         re: '\'.+\'',
-        color: '#d89333'
+        color: color.string
     },
     number: {
         re: ' [0-9]+',
-        color: '#85a300'
+        color: color.number
     },
     number2: {
         re: '[0-9]+,',
-        color: '#85a300'
+        color: color.number
     },
     variable: {
         re: 'var [A-Za-z0-9]+ ',
-        color: '#b77fdb'
+        color: color.variable
     },
     new: {
         re: 'new',
-        color: '#6c9ef8'
+        color: color.keyword
     },
     const: {
         re: 'const',
-        color: '#6c9ef8'
+        color: color.keyword
     },
     var: {
         re: 'var',
-        color: '#6c9ef8'
+        color: color.keyword
     },
     function: {
         re: 'function',
-        color: '#6c9ef8'
+        color: color.keyword
     },
     name: {
         re: 'function [A-Za-z]+',
-        color: '#6c9ef8'
+        color: color.variable
     },
     /*method: {
         re: '\\.[A-Za-z]+',
@@ -79,60 +89,92 @@ var obj = {
     },*/
     log: {
         re: 'log',
-        color: '#b77fdb'
+        color: color.variable
     },
     id: {
         re: 'id',
-        color: '#b77fdb'
+        color: color.variable
     },
     name: {
         re: 'name',
-        color: '#b77fdb'
+        color: color.variable
     },
     active: {
         re: 'active',
-        color: '#b77fdb'
+        color: color.variable
     },
     layer: {
         re: 'layer',
-        color: '#b77fdb'
+        color: color.variable
     },    
     _true: {
         re: 'true',
-        color: '#d89333'
+        color: color.keyword
     },
     _false: {
         re: 'false',
-        color: '#d89333'
+        color: color.keyword
     },
     this: {
         re: 'this',
-        color: '#6c9ef8'
+        color: color.keyword
     },
     update: {
         re: 'update',
-        color: '#b77fdb'
+        color: color.variable
     },
     draw: {
         re: 'draw',
-        color: '#b77fdb'
+        color: color.variable
     },
     _x: {
         re: 'x ',
-        color: '#b77fdb'
+        color: color.variable
     },
     _y: {
         re: 'y ',
-        color: '#b77fdb'
+        color: color.variable
     },
     life: {
         re: 'life',
-        color: '#b77fdb'
+        color: color.variable
     },
     comment: {
         re: '/\\*.*\\*/',
-        color: '#767676'
+        color: color.comment
     },
+    translate: {
+        re: 'translate',
+        color: color.variable
+    },
+    point: {
+        re: 'point',
+        color: color.function
+    },
+    line: {
+        re: 'line',
+        color: color.function
+    },
+    rect: {
+        re: 'rect',
+        color: color.function
+    },
+    circle: {
+        re: 'circle',
+        color: color.function
+    },
+    fill: {
+        re: 'fill',
+        color: color.function
+    },
+    strokeWeight: {
+        re: 'strokeWeight',
+        color: color.function
+    },
+    stroke: {
+        re: 'stroke',
+        color: color.function
+    }    
 };
 
 window.addEventListener('load', syntaxHighlights);
