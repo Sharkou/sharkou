@@ -250,6 +250,10 @@ pre {
     font-weight: bold;
 }
 
+pre:hover {
+    cursor: text;
+}
+
 .warning {
     background-color: rgba(249, 210, 216, 0.3) !important;
     padding: 10px;
