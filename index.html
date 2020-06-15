@@ -8,32 +8,33 @@
     <link href="https://fonts.googleapis.com/css?family=Work+Sans:400,600" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet">
     
+    <link href="css/all.min.css" rel="stylesheet">
     <!--<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">-->
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.1/css/all.css" integrity="sha384-O8whS3fhG2OnA5Kas0Y9l3cfpmYjapjI0E4theH4iuMD+pLhbf6JI0jIMfYcK3yZ" crossorigin="anonymous">
+    <!-- <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.1/css/all.css" integrity="sha384-O8whS3fhG2OnA5Kas0Y9l3cfpmYjapjI0E4theH4iuMD+pLhbf6JI0jIMfYcK3yZ" crossorigin="anonymous"> -->
     
-    <link rel="stylesheet" type="text/css" href="main.css">
+    <link rel="icon" type="image/png" href="./images/favicon.png">
+    <link rel="stylesheet" type="text/css" href="css/main.css">
     
-    
-    <title>Documentation</title>
+    <title>Pixel Creator · Documentation</title>
     
 </head>
 
 <body>
     
-    <header>
+    <!-- <header>
         <nav id="menu">
             <ul>
-                <!--<li id="title"><a href="#">2D Engine</a></li>-->
+                <li id="title"><a href="#">Pixel Creator</a></li>
                 <li><a href="#" class="focus">About</a></li>
                 <li><a href="#">Features</a></li>
                 <li><a href="#">Pricing</a></li>
                 <li><a href="#" class="active">Learn</a></li>
                 <li><a href="#">Community</a></li>
                 <li id="login"><a href="#"><i class="fa fa-user"></i>&nbsp;&nbsp;Sign in</a></li>
-                <!--<li id="language"><a href="#"><i class="fa fa-globe"></i>&nbsp;&nbsp;Language</a></li>-->
+                <li id="language"><a href="#"><i class="fa fa-globe"></i>&nbsp;&nbsp;Language</a></li>
             </ul>
         </nav>
-    </header>
+    </header> -->
     
     <!--<div class="search"></div>-->
     
@@ -47,22 +48,32 @@
             <ul>
                 <a href="#object">
                     <li class="anchor active">
-                        <i class="fas fa-vector-square"></i>Object
+                        <i class="fas fa-cube icon"></i>Object
                     </li>
                 </a>                
                 <a href="#component">
                      <li class="anchor">
-                        <i class="fas fa-puzzle-piece"></i>Component
+                        <i class="fas fa-puzzle-piece"></i>Components
                     </li>
                 </a>
-                <a href="#resource">
-                     <li class="anchor-warning">
-                        <i class="fas fa-images"></i>Resource
+                <a href="#renderer">
+                    <li class="anchor">
+                        <i class="fas fa-print"></i>Renderer
                     </li>                    
                 </a>
-                <a href="#window">
-                     <li class="anchor-warning">
-                        <i class="fas fa-desktop"></i>Window
+                <a href="#scene">
+                     <li class="anchor">
+                        <i class="fas fa-video"></i>Scene
+                    </li>                    
+                </a>
+                <a href="#camera">
+                    <li class="anchor">
+                       <i class="fas fa-camera-movie"></i>Camera
+                   </li>                    
+                </a>
+                <a href="#system">
+                     <li class="anchor">
+                        <i class="fas fa-cog"></i>System
                     </li>                    
                 </a>
             </ul>
@@ -112,19 +123,81 @@
                     </li>
                 </a>
             </ul>
-            
-            <!--<a href="#math">
+
+            <a href="#editor">
                 <li class="menu-title">
-                    Math
+                    Editor
+                </li>
+            </a>
+            <ul>               
+                <a href="#dnd">
+                    <li class="anchor">
+                        <i class="far fa-mouse-alt"></i>Dnd
+                    </li>
+                </a>
+                <a href="#windows">
+                    <li class="anchor-warning">
+                        <i class="far fa-window"></i>Windows
+                    </li>
+                </a>
+            </ul>
+            
+            <a href="#physics">
+                <li class="menu-title">
+                    Physics
                 </li>
             </a>
             <ul>
-                <a href="#vector">
+                <a href="#collider">
                     <li class="anchor-warning">
-                        <i class="fas fa-code-branch"></i>Vector
+                        <i class="fas fa-code-branch"></i>Collider
                     </li>
                 </a>
-            </ul>-->
+            </ul>
+            
+            <a href="#animations">
+                <li class="menu-title">
+                    Animations
+                </li>
+            </a>
+            <ul>
+                <a href="#animator">
+                    <li class="anchor-warning">
+                        <i class="fas fa-code-branch"></i>Animator
+                    </li>
+                </a>
+            </ul>
+
+            <a href="#audio">
+                <li class="menu-title">
+                    Audio
+                </li>
+            </a>
+            <ul>
+                <a href="#audio">
+                    <li class="anchor-warning">
+                        <i class="fas fa-code-branch"></i>Audio
+                    </li>
+                </a>
+            </ul>
+
+            <a href="#time">
+                <li class="menu-title">
+                    Time
+                </li>
+            </a>
+            <ul>
+                <a href="#time">
+                    <li class="anchor-warning">
+                        <i class="fas fa-code-branch"></i>Time
+                    </li>
+                </a>
+                <a href="#performance">
+                    <li class="anchor-warning">
+                        <i class="fas fa-code-branch"></i>Performance
+                    </li>
+                </a>
+            </ul>
         </ul>
     </aside>
     
@@ -133,9 +206,53 @@
             <h1>API</h1>
 
             <!-- Object -->
-            <h2 id="object"><mark>new</mark> Object<mark>()</mark></h2>
+            <h2 id="object"><mark>new</mark> Object</h2>
             <!--<span class="version">version 0.2.1</span>-->
             <hr />
+
+            <p>Initialize an <code>Object</code></p>
+
+            <span class="menu-title">Parameters</span>
+            <br />
+            <br />
+            <table>
+                <tr id="table-header">
+                    <th>Name</th>
+                    <th>Type</th>
+                    <th>Description</th>
+                </tr>
+                <tr href="#object">
+                    <td class="method">name</td>
+                    <td><code>string</code></td>
+                    <td class="method">The name of the <code>Object</code></td>
+                </tr>
+                <tr href="#object">
+                    <td class="method">x</td>
+                    <td><code>number</code></td>
+                    <td class="method">The x-coordinate of the <code>Object</code></td>
+                </tr>
+                <tr href="#object">
+                    <td class="method">y</td>
+                    <td><code>number</code></td>
+                    <td class="method">The y-coordinate of the <code>Object</code></td>
+                </tr>
+                <tr href="#object">
+                    <td class="method">width</td>
+                    <td><code>number</code></td>
+                    <td class="method">The width of the <code>Object</code></td>
+                </tr>
+                <tr href="#object">
+                    <td class="method">height</td>
+                    <td><code>number</code></td>
+                    <td class="method">The height of the <code>Object</code></td>
+                </tr>
+                <tr href="#object">
+                    <td class="method">layer</td>
+                    <td><code>number</code></td>
+                    <td class="method">The layer</td>
+                </tr>
+            </table>
+
             <br />
 
             <span class="menu-title">Properties</span>
@@ -144,47 +261,71 @@
             <table>
                 <tr id="table-header">
                     <th>Name</th>
-                    <th>Type</th> 
+                    <th>Type</th>
                 </tr>
-                <tr>
+                <tr href="#object-id">
                     <td class="method">id</td>
                     <td><code>string</code></td>
                 </tr>
-                <tr>
+                <tr href="#object-name">
                     <td class="method">name</td>
                     <td><code>string</code></td>
                 </tr>
-                <tr>
-                    <td class="method">active</td>
-                    <td><code>boolean</code></td>
+                <tr href="#object-tag">
+                    <td class="method">tag</td>
+                    <td><code>string</code></td>
                 </tr>
-                <tr>
+                <tr href="#object-x">
                     <td class="method">x</td>
                     <td><code>number</code></td>
-                </tr>            
-                <tr>
+                </tr>
+                <tr href="#object-y">
                     <td class="method">y</td>
                     <td><code>number</code></td>
                 </tr>
-                <tr>
+                <tr href="#object-width">
+                    <td class="method">width</td>
+                    <td><code>number</code></td>
+                </tr>            
+                <tr href="#object-height">
+                    <td class="method">height</td>
+                    <td><code>number</code></td>
+                </tr>
+                <tr href="#object-layer">
                     <td class="method">layer</td>
                     <td><code>number</code></td>
                 </tr> 
-                <tr class="warning">
-                    <td class="method">rotation</td>
-                    <td><code><a href="#vector">Vector</a></code></td>
+                <tr href="#object-active">
+                    <td class="method">active</td>
+                    <td><code>boolean</code></td>
                 </tr>
-                <tr class="warning">
+                <tr href="#object-visible">
+                    <td class="method">visible</td>
+                    <td><code>boolean</code></td>
+                </tr>
+                <tr href="#object-lock">
+                    <td class="method">lock</td>
+                    <td><code>boolean</code></td>
+                </tr>
+                <tr href="#object-static">
+                    <td class="method">static</td>
+                    <td><code>boolean</code></td>
+                </tr>
+                <tr href="#object-rotation">
+                    <td class="method">rotation</td>
+                    <td><code><a href="#vector">number</a></code></td>
+                </tr>
+                <tr href="#object-scale" class="warning">
                     <td class="method">scale</td>
                     <td><code><a href="#vector">Vector</a></code></td>
                 </tr>            
-                <tr>
+                <tr href="#object-childs">
                     <td class="method">childs</td>
-                    <td><code><a href="#object">Object[]</a></code></td>
+                    <td><code><a href="#object">Array</a></code></td>
                 </tr>
-                <tr>
+                <tr href="#object-components">
                     <td class="method">components</td>
-                    <td><code><a href="#component">Component[]</a></code></td>
+                    <td><code><a href="#object">Array</a></code></td>
                 </tr>            
             </table>
 
@@ -196,22 +337,78 @@
             <table>
                 <tr id="table-header">
                     <th>Name</th>
-                    <th>Return</th> 
+                    <th>Return</th>
                 </tr>
-                <tr>
+                <tr href="#object-update">
                     <td class="method">update()</td>
                     <td><code>void</code></td>
                 </tr>
-                <tr>
+                <tr href="#object-draw">
                     <td class="method">draw()</td>
                     <td><code>void</code></td>
+                </tr>
+                <tr href="#object-addComponent">
+                    <td class="method">addComponent(component: <code>Object</code>)</td>
+                    <td><code>this</code></td>
+                </tr>
+                <tr href="#object-removeComponent">
+                    <td class="method">removeComponent(component: <code>Object</code>)</td>
+                    <td><code>void</code></td>
+                </tr>
+                <tr href="#object-addChild">
+                    <td class="method">addChild(child: <code>Object</code>)</td>
+                    <td><code>void</code></td>
+                </tr>
+                <tr href="#object-removeChild">
+                    <td class="method">removeChild(child: <code>Object</code>)</td>
+                    <td><code>void</code></td>
+                </tr>
+                <tr href="#object-contain">
+                    <td class="method">contain(component: <code>Object</code>)</td>
+                    <td><code>boolean</code></td>
+                </tr>
+                <tr href="#object-translate">
+                    <td class="method">translate(x: <code>number</code>, y: <code>number</code>)</td>
+                    <td><code>void</code></td>
+                </tr>
+                <tr href="#object-rotate">
+                    <td class="method">rotate(angle: <code>number</code>)</td>
+                    <td><code>void</code></td>
+                </tr>
+                <tr href="#object-copy">
+                    <td class="method">copy(obj: <code>Object</code>)</td>
+                    <td><code>void</code></td>
+                </tr>
+                <tr href="#object-onCollision" class="warning">
+                    <td class="method">onCollision(other: <code>Object</code>)</td>
+                    <td><code>void</code></td>
+                </tr>
+                <tr href="#object-onCollisionExit" class="warning">
+                    <td class="method">onCollisionExit(other: <code>Object</code>)</td>
+                    <td><code>void</code></td>
+                </tr>
+                <tr href="#object-detectMouse">
+                    <td class="method">detectMouse(x: <code>number</code>, y: <code>number</code>)</td>
+                    <td><code>boolean</code></td>
+                </tr>
+                <tr href="#object-detectSide">
+                    <td class="method">detectSide(x: <code>number</code>, y: <code>number</code>)</td>
+                    <td><code>string</code></td>
+                </tr>
+                <tr href="#object-select">
+                    <td class="method">select(ctx: <code>CanvasRenderingContext2D </code>)</td>
+                    <td><code>void</code></td>
+                </tr>
+                <tr href="#object-createImage">
+                    <td class="method">createImage(ctx: <code>CanvasRenderingContext2D </code>)</td>
+                    <td><code>Image</code></td>
                 </tr>
             </table>
 
             <h2>Properties</h2>
 
             <!-- Property Object.id -->
-            <h3>Object.id</h3>
+            <h3 id="object-id">Object.id</h3>
 
             <p>Get identifier of <code><a href="#object">Object</a></code></p>
 
@@ -220,68 +417,94 @@
             <span class="menu-title">Example</span>
 
 <pre>
-var o = new Object();
-console.log(o.id); /* Object identifier */
+import { Object } from '/src/core/object.js';
+
+let obj = new Object('New Object', 0, 0, 20, 20, 0);
+console.log(obj.id); /* Object identifier */
 </pre>
 
             <!-- Property Object.name -->
-            <h3>Object.name</h3>
+            <h3 id="object-name">Object.name</h3>
 
             <p>Get name of <code><a href="#object">Object</a></code></p>
 
             <span class="menu-title">Example</span>
 
 <pre>
-var particleSystem = new Object();
+let particleSystem = new Object();
 particleSystem.name = 'Particle System';
 </pre>
 
-            <!-- Property Object.active -->
-            <h3>Object.active</h3>
-
-            <p>Active <code><a href="#object">Object</a></code></p>
-
-            <span class="menu-title">Example</span>
-
-<pre>
-var hud = new Object();
-hud.active = false;
-</pre>
-
             <!-- Property Object.x -->
-            <h3>Object.x</h3>
+            <h3 id="object-x">Object.x</h3>
 
             <p>Get x position of <code><a href="#object">Object</a></code></p>
 
             <span class="menu-title">Example</span>
 
 <pre>
-var player = new Object();
+let player = new Object();
 player.x += 1;
 </pre>
 
             <!-- Property Object.y -->
-            <h3>Object.y</h3>
+            <h3 id="object-y">Object.y</h3>
 
             <p>Get y position of <code><a href="#object">Object</a></code></p>
 
             <span class="menu-title">Example</span>
 
 <pre>
-var player = new Object();
+let player = new Object();
 player.y += 1;
 </pre>
 
+            <!-- Property Object.x -->
+            <h3 id="object-width">Object.width</h3>
+
+            <p>Get width of <code><a href="#object">Object</a></code></p>
+
+            <span class="menu-title">Example</span>
+
+<pre>
+let player = new Object();
+player.width = 200;
+</pre>
+
+            <!-- Property Object.y -->
+            <h3 id="object-height">Object.height</h3>
+
+            <p>Get height of <code><a href="#object">Object</a></code></p>
+
+            <span class="menu-title">Example</span>
+
+<pre>
+let player = new Object();
+player.height = 150;
+</pre>
+
             <!-- Property Object.layer -->
-            <h3>Object.layer</h3>
+            <h3 id="object-layer">Object.layer</h3>
 
             <p>Get layer (z-index) of <code><a href="#object">Object</a></code></p>
 
             <span class="menu-title">Example</span>
 
 <pre>
-var menu = new Object();
+let menu = new Object();
 menu.layer = 10;
+</pre>
+
+            <!-- Property Object.active -->
+            <h3 id="object-active">Object.active</h3>
+
+            <p>Active <code><a href="#object">Object</a></code></p>
+
+            <span class="menu-title">Example</span>
+
+<pre>
+let hud = new Object();
+hud.active = false;
 </pre>
 
             <!-- Property Object.layer -->
@@ -310,11 +533,13 @@ menu.layer = 10;
 
             <h2>Methods</h2>
 
-            <h3>Object.update()</h3>
+            <h3 id="object-update">Object.update()</h3>
 
-            <p><code>update</code> is called every frame if <code>Object</code> is <code>active</code></p>
+            <p><code href="#object-update">update</code> is called every frame if <code href="#object">Object</code> is <code href="#object-active">active</code></p>
 
-            <span class="menu-title">Example</span>
+            <p class="warning"><i class="fas fa-exclamation-circle"></i>Do not modify this method.</p>
+
+            <!-- <span class="menu-title">Example</span>
 
 <pre>
 var player = new Object();
@@ -323,13 +548,15 @@ player.update = function() {
         player.active = false;
     }
 };
-</pre>
+</pre> -->
 
-            <h3>Object.draw()</h3>
+            <h3 id="object-draw">Object.draw()</h3>
 
-            <p><code>draw</code> is called every frame if <code>Object</code> is <code>active</code></p>
+            <p><code href="#object-draw">draw</code> is called every frame if <code href="#object">Object</code> is <code href="#object-active">active</code></p>
 
-            <span class="menu-title">Example</span>
+            <p class="warning"><i class="fas fa-exclamation-circle"></i>Do not modify this method.</p>
+
+            <!-- <span class="menu-title">Example</span>
 
 <pre>
 var snow = new Object();
@@ -338,6 +565,71 @@ snow.y = 0;
 snow.draw = function() {
     circle(this.x, this.y);
 };
+</pre> -->
+
+            <h3 id="object-addComponent">Object.addComponent(component)</h3>
+
+            <p>Add the <code href="#object">Object</code> component</p>
+
+            <span class="menu-title">Example</span>
+
+<pre>
+let obj = new Object('Circle', 100, 100, 20, 20, 0);
+obj.addComponent(new Circle('#CC8844', 0.6));
+scene.add(circle);
+</pre>
+
+            <h3 id="object-removeComponent">Object.removeComponent(component)</h3>
+
+            <p>Remove the <code href="#object">Object</code> component</p>
+
+            <span class="menu-title">Example</span>
+
+<pre>
+let obj = new Object('New Object', 100, 100, 20, 20, 0);
+let circleComponent = new Circle('#CC8844', 0.6);
+obj.addComponent(circleComponent);
+obj.removeComponent(circleComponent);
+</pre>
+
+            <h3 id="object-addChild">Object.addChild(child)</h3>
+
+            <p>Add child to <code href="#object">Object</code></p>
+
+            <span class="menu-title">Example</span>
+
+<pre>
+let parent = new Object('Parent', 0, 0, 20, 20, 0);
+let child = new Object('Child', 0, 0, 10, 10, 0);
+parent.addChild(child);
+</pre>
+
+            <h3 id="object-removeChild">Object.removeChild(child)</h3>
+
+            <p>Add child to <code href="#object">Object</code></p>
+
+            <span class="menu-title">Example</span>
+
+<pre>
+let parent = new Object('Parent', 0, 0, 20, 20, 0);
+let child = new Object('Child', 0, 0, 10, 10, 0);
+parent.addChild(child);
+parent.removeChild(child);
+</pre>
+
+            <h3 id="object-contain">Object.contain(component)</h3>
+
+            <p>Contains the <code href="#object">Object</code> component</p>
+
+            <span class="menu-title">Example</span>
+
+<pre>
+let obj = new Object('New Object', 100, 100, 20, 20, 0);
+let circleComponent = new Circle('#CC8844', 0.6);
+obj.addComponent(circleComponent);
+if (obj.contains(circleComponent)) {
+    return true;
+}
 </pre>
 
             <!--<h3>Object.moveTo(x, y)</h3>
@@ -349,24 +641,242 @@ snow.draw = function() {
     <pre>
     var player = new Object();
     player.moveTo(10, 20);
-    </pre>
+    </pre>-->
 
-            <h3>Object.translate(x, y)</h3>
+            <h3 id="object-translate">Object.translate(x, y)</h3>
 
-            <p>Move <code><a href="#object">Object</a></code> of (x, y)</p>
+            <p>Translate the <code><a href="#object">Object</a></code> by (x, y)</p>
 
             <span class="menu-title">Example</span>
 
-    <pre>
-    var player = new Object();
-    player.translate(1, 0);
-    </pre>-->
+<pre>
+let player = new Object();
+player.translate(1, 0);
+</pre>
+
+            <h3 id="object-rotate">Object.rotate(angle)</h3>
+
+            <p>Rotate the <code><a href="#object">Object</a></code> by angle (in degrees)</p>
+
+            <span class="menu-title">Example</span>
+
+<pre>
+let player = new Object();
+player.rotate(60);
+</pre>
+
+            <h3 id="object-copy">Object.copy(obj)</h3>
+
+            <p>Copy the <code><a href="#object">Object</a></code> properties</p>
+
+            <span class="menu-title">Example</span>
+
+<pre>
+for (let id in scene.objects) {
+    let obj = new Object();
+    obj.copy(scene.objects[id]);
+    scene.add(obj);
+}
+</pre>
+
+            <h3 id="object-copy">Object.copy(obj)</h3>
+
+            <p>Copy the <code><a href="#object">Object</a></code> properties</p>
+
+            <span class="menu-title">Example</span>
+
+<pre>
+for (let id in scene.objects) {
+    let obj = new Object();
+    obj.copy(scene.objects[id]);
+    scene.add(obj);
+}
+</pre>
+
+            <h3 id="object-detectMouse">Object.detectMouse(x, y)</h3>
+
+            <p>Detect <code href="#mouse">Mouse</code> hover</p>
+
+            <span class="menu-title">Example</span>
+
+<pre>
+if (obj.detectMouse(Mouse.x, Mouse.y)) {
+    Dnd.resize = obj.detectSide(Mouse.x, Mouse.y);
+    Dnd.hovering = true;
+}
+</pre>
+
+            <h3 id="object-detectSide">Object.detectSide(x, y)</h3>
+
+            <p>Detects sides for editor resizing</p>
+
+            <span class="menu-title">Example</span>
+
+<pre>
+if (obj.detectMouse(Mouse.x, Mouse.y)) {
+    Dnd.resize = obj.detectSide(Mouse.x, Mouse.y);
+    Dnd.hovering = true;
+}
+</pre>
+
+            <h3 id="object-select">Object.select(ctx)</h3>
+
+            <p>Select <code><a href="#object">Object</a></code> in editor with <code href="#mouse">Mouse</code></p>
+
+            <span class="menu-title">Example</span>
+
+<pre>
+if (obj === scene.current && !obj.lock) {
+    obj.select(this.ctx);
+}
+</pre>
+
+            <h3 id="object-createImage">Object.createImage(ctx)</h3>
+
+            <p>Create image of the <code><a href="#object">Object</a></code></p>
+
+            <span class="menu-title">Example</span>
+
+<pre>
+let obj = new Object('Empty', 0, 0, width, height);
+obj.addComponent(new Light());
+let img = obj.createImage();
+</pre>
 
             <!-- COMPONENT -->
 
-            <h2 id="component"><mark>new</mark> Component<mark>()</mark></h2>
+            <h2 id="component"><mark>static</mark> Component</h2>
             <!--<span class="version">version 0.2.1</span>-->
             <hr />
+
+            <p>Allow to manage <code href="#component">Components</code></p>
+
+            <span class="menu-title">Properties</span>
+            <br />
+            <br />
+            <table>
+                <tr id="table-header">
+                    <th>Name</th>
+                    <th>Type</th> 
+                </tr>
+                <tr href="#component-components">
+                    <td class="method">components</td>
+                    <td><code>Array</code></td>
+                </tr>
+            </table>
+
+            <br />
+
+            <span class="menu-title">Methods</span>
+            <br />
+            <br />
+            <table>
+                <tr id="table-header">
+                    <th>Name</th>
+                    <th>Return</th>
+                </tr>
+                <tr href="#component-add">
+                    <td class="method">add(component: <code>Class</code>, icon: <code>string</code>, category: <code>string</code>)</td>
+                    <td><code>void</code></td>
+                </tr>
+                <tr class="warning" href="#component-appendChild">
+                    <td class="method">appendChild(component: <code>Class</code>, icon: <code>string</code>, category: <code>string</code>)</td>
+                    <td><code>void</code></td>
+                </tr>
+            </table>
+            
+            <h2>Properties</h2>
+
+            <h3 id="component-components">Component.components</h3>
+
+            <p>Get <code href="#component">Component</code> from project</p>
+
+            <span class="menu-title">Example</span>
+
+<pre>
+import { Component } from '/src/core/component.js';
+
+let rotatorComponent = Component.components['Rotator'];
+</pre>
+
+            <h2>Methods</h2>
+
+            <h3 id="component-add">Component.add(component, icon, category)</h3>
+
+            <p>Add <code href="#component">Component</code> to list</p>
+
+            <span class="menu-title">Example</span>
+
+<pre>
+import { Component } from '/src/core/component.js';
+
+export class Rotator {
+    /**
+    * Initialize the component
+    * @constructor
+    * @param {number} speed - The speed in degree
+    */
+    constructor(speed = 10) {
+        this.rotation = 0;
+        this.speed = speed;
+    }
+    
+    /**
+    * Update the component
+    * @update
+    */
+    update(self) {
+        this.rotation += this.speed;
+        this.rotation = this.rotation % 360;
+        self.rotate(this.rotation);
+    }
+
+    /**
+    * Draw the component
+    * @draw
+    */
+    draw(self) {
+        
+    }
+}
+
+Component.add(Rotator, 'far fa-sync', 'physics');
+</pre>
+
+            <!-- RENDERER -->
+
+            <h2 id="renderer"><mark>new</mark> Renderer</h2>
+            <!--<span class="version">version 0.2.1</span>-->
+            <hr />
+
+            <p>Initialize a <code href="#renderer">Renderer</code></p>
+
+            <span class="menu-title">Parameters</span>
+            <br />
+            <br />
+            <table>
+                <tr id="table-header">
+                    <th>Name</th>
+                    <th>Type</th>
+                    <th>Description</th>
+                </tr>
+                <tr href="#renderer">
+                    <td class="method">width</td>
+                    <td><code>number</code></td>
+                    <td class="method">The width</td>
+                </tr>
+                <tr href="#renderer">
+                    <td class="method">height</td>
+                    <td><code>number</code></td>
+                    <td class="method">The height</td>
+                </tr>
+                <tr href="#renderer">
+                    <td class="method">parent</td>
+                    <td><code>Element</code></td>
+                    <td class="method">The DOM Element parent of <code href="#renderer">Renderer</code></td>
+                </tr>
+            </table>
+
             <br />
 
             <span class="menu-title">Properties</span>
@@ -377,38 +887,652 @@ snow.draw = function() {
                     <th>Name</th>
                     <th>Type</th> 
                 </tr>
-                <tr>
+                <tr href="#renderer-width">
+                    <td class="method">width</td>
+                    <td><code>number</code></td>
+                </tr>
+                <tr href="#renderer-height">
+                    <td class="method">height</td>
+                    <td><code>number</code></td>
+                </tr>
+                <tr href="#renderer-ratio">
+                    <td class="method">ratio</td>
+                    <td><code>number</code></td>
+                </tr>
+                <tr href="#renderer-parent">
+                    <td class="method">parent</td>
+                    <td><code href="element">Element</code></td>
+                </tr>
+                <tr href="#renderer-pause">
+                    <td class="method">pause</td>
+                    <td><code>boolean</code></td>
+                </tr>
+                <tr href="#renderer-canvas">
+                    <td class="method">canvas</td>
+                    <td><code>HTMLCanvasElement</code></td>
+                </tr>
+                <tr href="#renderer-canvas">
+                    <td class="method">ctx</td>
+                    <td><code>CanvasRenderingContext2D</code></td>
+                </tr>
+                <tr href="#renderer-main">
+                    <td class="method">main</td>
+                    <td><code href="#renderer">Renderer</code></td>
+                </tr>
+            </table>
+
+            <br />
+
+            <span class="menu-title">Methods</span>
+            <br />
+            <br />
+            <table>
+                <tr id="table-header">
+                    <th>Name</th>
+                    <th>Return</th>
+                </tr>
+                <tr href="#renderer-createCanvas">
+                    <td class="method">createCanvas(id: <code>string</code>, zIndex: <code>number</code>, category: <code>string</code>)</td>
+                    <td><code>HTMLCanvasElement</code></td>
+                </tr>
+                <tr href="#renderer-init">
+                    <td class="method">init(scene: <code href="#scene">Scene</code>, camera: <code href="#camera">Camera</code>)</td>
+                    <td><code>void</code></td>
+                </tr>
+                <tr href="#renderer-render">
+                    <td class="method">render(scene: <code href="#scene">Scene</code>, camera: <code href="#camera">Camera</code>)</td>
+                    <td><code>void</code></td>
+                </tr>
+                <tr href="#renderer-clear">
+                    <td class="method">clear(color: <code>string</code>)</td>
+                    <td><code>void</code></td>
+                </tr>
+                <tr href="#renderer-resize">
+                    <td class="method">resize(width: <code>string</code>, height: <code>string</code>)</td>
+                    <td><code>void</code></td>
+                </tr>
+            </table>
+            
+            <h2>Properties</h2>
+
+            <h3 id="renderer-width">Renderer.width</h3>
+
+            <p>The width of the <code href="#renderer">Renderer</code></p>
+
+            <h3 id="renderer-height">Renderer.height</h3>
+
+            <p>The height of the <code href="#renderer">Renderer</code></p>
+
+            <h3 id="renderer-ratio">Renderer.ratio</h3>
+
+            <p>The ratio of the <code href="#renderer">Renderer</code> relative to the <code href="#camera">Camera</code></p>
+
+            <h3 id="renderer-parent">Renderer.parent</h3>
+
+            <p>The DOM Element parent of <code href="#renderer">Renderer</code></p>
+
+            <span class="menu-title">Example</span>
+
+<pre>
+import { Renderer } from '/src/core/renderer.js';
+
+const canvas = document.getElementById('canvas');
+const renderer = new Renderer(canvas.clientWidth, canvas.clientHeight, canvas);
+console.log(renderer.parent); // return canvas
+</pre>
+
+            <h3 id="renderer-pause">Renderer.pause</h3>
+
+            <p><code>True</code> if the game renderer is paused</p>
+
+            <h3 id="renderer-canvas">Renderer.canvas</h3>
+
+            <p>The <code>HTMLCanvasElement</code> of the <code href="#renderer">Renderer</code></p>
+
+            <h3 id="renderer-ctx">Renderer.ctx</h3>
+
+            <p>The <code>CanvasRenderingContext2D</code> of the <code href="#renderer">Renderer</code></p>
+            
+            <h3 id="renderer-main">Renderer.main</h3>
+
+            <p>Get current <code href="#renderer">Renderer</code></p>
+
+            <h2>Methods</h2>
+
+            <h3 id="renderer-createCanvas">Renderer.createCanvas(id, zIndex)</h3>
+
+            <p>Create canvas from layer</p>
+
+            <p class="warning"><i class="fas fa-exclamation-circle"></i>Do not use this property directly.</p>
+
+            <h3 id="renderer-init">Renderer.init(scene, camera)</h3>
+
+            <p>Init the canvas <code href="#renderer">Renderer</code></p>
+
+            <span class="menu-title">Example</span>
+
+<pre>
+import { Renderer } from '/src/core/renderer.js';
+
+const renderer = new Renderer(canvas.clientWidth, canvas.clientHeight, canvas);
+const scene = new Scene('Main Scene');
+const camera = new Object('Viewport', 0, 0, canvas.clientWidth, canvas.clientHeight)
+    .addComponent(new Camera('#272727'));
+
+renderer.init(scene, camera);
+</pre>
+
+            <h3 id="renderer-render">Renderer.render(scene, camera)</h3>
+
+            <p>Render the <code href="#scene">Scene</code></p>
+
+            <span class="menu-title">Example</span>
+
+<pre>
+function loop() {
+    window.requestAnimationFrame(loop);    
+    renderer.render(scene, camera);
+}
+</pre>
+
+            <h3 id="renderer-clear">Renderer.clear(color)</h3>
+
+            <p>Clear canvas</p>
+
+            <span class="menu-title">Example</span>
+
+<pre>
+renderer.clear('#000000');
+</pre>
+
+            <h3 id="renderer-resize">Renderer.resize(width, height)</h3>
+
+            <p>Resize the canvas</p>
+
+            <span class="menu-title">Example</span>
+
+<pre>
+window.onresize = function() {
+    renderer.resize(canvas.clientWidth, canvas.clientHeight);
+};
+</pre>
+
+            <!-- SCENE -->
+
+            <h2 id="scene"><mark>new</mark> Scene</h2>
+            <!--<span class="version">version 0.2.1</span>-->
+            <hr />
+
+            <p>Initialize a <code href="#scene">Scene</code></p>
+
+            <span class="menu-title">Parameters</span>
+            <br />
+            <br />
+            <table>
+                <tr id="table-header">
+                    <th>Name</th>
+                    <th>Type</th>
+                    <th>Description</th>
+                </tr>
+                <tr href="#scene">
+                    <td class="method">name</td>
+                    <td><code>string</code></td>
+                    <td class="method">The name of the <code>Scene</code></td>
+                </tr>
+            </table>
+
+            <br />
+
+            <span class="menu-title">Properties</span>
+            <br />
+            <br />
+            <table>
+                <tr id="table-header">
+                    <th>Name</th>
+                    <th>Type</th> 
+                </tr>
+                <tr href="#scene-name">
                     <td class="method">name</td>
                     <td><code>string</code></td>
                 </tr>
-                <tr>
-                    <td class="method">view</td>
-                    <td><code>string</code></td>
+                <tr href="#scene-objects">
+                    <td class="method">objects</td>
+                    <td><code>Array</code></td>
                 </tr>
-            </table>        
+                <tr href="#scene-events">
+                    <td class="method">events</td>
+                    <td><code>Array</code></td>
+                </tr>
+                <tr href="#scene-current">
+                    <td class="method">current</td>
+                    <td><code>Object</code></td>
+                </tr>
+                <tr href="#scene-camera">
+                    <td class="method">camera</td>
+                    <td><code href="#camera">Camera</code></td>
+                </tr>
+                <tr href="#scene-main">
+                    <td class="method">main</td>
+                    <td><code>Scene</code></td>
+                </tr>
+                <tr href="#scene-currentComponent">
+                    <td class="method">currentComponent</td>
+                    <td><code href="#component">Component</code></td>
+                </tr>
+            </table>
 
-            <h3>Component.name</h3>
+            <br />
 
-            <p>Get name of <code><a href="#object">Component</a></code></p>
+            <span class="menu-title">Methods</span>
+            <br />
+            <br />
+            <table>
+                <tr id="table-header">
+                    <th>Name</th>
+                    <th>Return</th>
+                </tr>
+                <tr href="#scene-add">
+                    <td class="method">add(obj: <code>Object</code>, dispatch: <code>boolean</code>)</td>
+                    <td><code>void</code></td>
+                </tr>
+                <tr href="#scene-remove">
+                    <td class="method">remove(obj: <code>Object</code>, dispatch: <code>boolean</code>)</td>
+                    <td><code>void</code></td>
+                </tr>
+                <tr class="warning" href="#scene-instanciate">
+                    <td class="method">instanciate(obj: <code>Object</code>, dispatch: <code>boolean</code>)</td>
+                    <td><code>void</code></td>
+                </tr>
+                <tr href="#scene-dispatchEvent">
+                    <td class="method">dispatchEvent(event: <code>string</code>, data: <code>object</code>)</td>
+                    <td><code>void</code></td>
+                </tr>
+                <tr href="#scene-addEventListener">
+                    <td class="method">addEventListener(event: <code>string</code>, fn: <code>Function</code>)</td>
+                    <td><code>void</code></td>
+                </tr>
+                <tr href="#scene-getObjectByName">
+                    <td class="method">getObjectByName(name: <code>string</code>)</td>
+                    <td><code>Object</code></td>
+                </tr>
+                <tr class="warning" href="#scene-getObjectsByTag">
+                    <td class="method">getObjectsByTag(tag: <code>string</code>)</td>
+                    <td><code>Array</code></td>
+                </tr>
+                <tr href="#scene-updateName">
+                    <td class="method">updateName(el: <code>HTMLElement</code>, obj: <code href="#object">Object</code>)</td>
+                    <td><code>void</code></td>
+                </tr>
+            </table>
             
+            <h2>Properties</h2>
+
+            <h3 id="scene-name">Scene.name</h3>
+
+            <p>The name of the <code href="#scene">Scene</code></p>
 
             <span class="menu-title">Example</span>
 
 <pre>
-var collider = new Component();
-collider.name = 'Collider';
+import { Scene } from '/src/core/scene.js';
+
+const scene = new Scene('Main Scene');
+console.log(scene.name);
 </pre>
 
-            <h3>Component.view</h3>
+            <h3 id="scene-objects">Scene.objects</h3>
 
-            <p>Get HTML view of <code><a href="#object">Component</a></code></p>
-            
+            <p>Contains all <code href="#object">Objects</code> of the <code href="#scene">Scene</code></p>
 
             <span class="menu-title">Example</span>
 
 <pre>
-var color = new Component();
-color.view = 'Color';
+for (let id in scene.objects) {
+    const obj = scene.objects[id];
+    obj.getActive(true);
+}
+</pre>
+
+            <h3 id="scene-events">Scene.events</h3>
+
+            <p>Contains all events of the <code href="#scene">Scene</code></p>
+
+            <p class="warning"><i class="fas fa-exclamation-circle"></i>Do not use this property directly.</p>
+
+            <h3 id="scene-current">Scene.current</h3>
+
+            <p>Get current <code href="#object">Object</code> of <code href="#scene">Scene</code></p>
+
+            <span class="menu-title">Example</span>
+
+<pre>
+let obj = scene.current;
+</pre>
+
+            <h3 id="scene-camera">Scene.camera</h3>
+
+            <p>Get active <code href="#camera">Camera</code> of <code href="#scene">Scene</code></p>
+
+            <span class="menu-title">Example</span>
+
+<pre>
+let camera = scene.camera;
+</pre>
+
+            <h3 id="scene-camera">Scene.main</h3>
+
+            <p>Get current <code href="#scene">Scene</code></p>
+
+            <span class="menu-title">Example</span>
+
+<pre>
+import { Scene } from '/src/core/scene.js';
+
+const scene = Scene.main;
+</pre>
+
+            <h2>Methods</h2>
+
+            <h3 id="scene-add">Scene.add(obj, dispatch)</h3>
+
+            <p>Add an <code href="#object">Object</code> to <code href="#scene">Scene</code></p>
+
+            <span class="menu-title">Example</span>
+
+<pre>
+let obj = new Object('Test', 0, 0, 20, 20, 0);
+scene.add(obj);
+</pre>
+
+            <h3 id="scene-remove">Scene.remove(obj, dispatch)</h3>
+
+            <p>Remove an <code href="#object">Object</code> from <code href="#scene">Scene</code></p>
+
+            <span class="menu-title">Example</span>
+
+<pre>
+let obj = new Object('Test', 0, 0, 20, 20, 0);
+scene.add(obj);
+scene.remove(obj);
+</pre>
+
+            <h3 id="scene-instanciate">Scene.instanciate(obj, dispatch)</h3>
+
+            <p>instanciate an <code href="#object">Object</code> to <code href="#scene">Scene</code></p>
+
+            <span class="menu-title">Example</span>
+
+<pre>
+let obj = new Object('Test', 0, 0, 20, 20, 0);
+scene.instanciate(obj);
+</pre>
+
+            <h3 id="scene-dispatchEvent">Scene.dispatchEvent(e, data)</h3>
+
+            <p>Dispatch event</p>
+
+            <span class="menu-title">Example</span>
+
+<pre>
+function setObject(obj) {
+    scene.dispatchEvent('setObject', obj);
+}
+</pre>
+
+            <h3 id="scene-addEventListener">Scene.addEventListener(e, fn)</h3>
+
+            <p>Listen event</p>
+
+            <span class="menu-title">Example</span>
+
+<pre>
+// On added object
+scene.addEventListener('add', obj => {
+    obj.x += 10;
+});
+
+// Object removed from scene
+scene.addEventListener('remove', obj => {
+    // do something
+});
+</pre>
+
+            <h3 id="scene-getObjectByName">Scene.getObjectByName(name)</h3>
+
+            <p>Get <code href="#object">Object</code> by name</p>
+
+            <span class="menu-title">Example</span>
+
+<pre>
+let obj = scene.getObjectByName('New Object');
+</pre>
+
+            <h3 id="scene-updateName">Scene.updateName(el, obj)</h3>
+
+            <p>Update <code href="#object">Object</code> name from HTML <code>Element</code></p>
+
+            <span class="menu-title">Example</span>
+
+<pre>
+const obj = new Object('Test', 0, 0, 20, 20, 0);
+const el = document.getElementById('objectId-name');
+scene.updateName(el, obj);
+</pre>
+
+            <h2 id="camera"><mark>new</mark> Camera</h2>
+            <!--<span class="version">version 0.2.1</span>-->
+            <hr />
+
+            <p>Initialize a <code href="#camera">Camera</code></p>
+
+            <span class="menu-title">Parameters</span>
+            <br />
+            <br />
+            <table>
+                <tr id="table-header">
+                    <th>Name</th>
+                    <th>Type</th>
+                    <th>Description</th>
+                </tr>
+                <tr href="#camera">
+                    <td class="method">name</td>
+                    <td><code>string</code></td>
+                    <td class="method">The name of the <code>Camera</code></td>
+                </tr>
+                <tr href="#camera">
+                    <td class="method">x</td>
+                    <td><code>number</code></td>
+                    <td class="method">The x-coordinate of the <code>Camera</code></td>
+                </tr>
+                <tr href="#camera">
+                    <td class="method">y</td>
+                    <td><code>number</code></td>
+                    <td class="method">The y-coordinate of the <code>Camera</code></td>
+                </tr>
+                <tr href="#camera">
+                    <td class="method">width</td>
+                    <td><code>number</code></td>
+                    <td class="method">The width of the <code>Camera</code></td>
+                </tr>
+                <tr href="#camera">
+                    <td class="method">height</td>
+                    <td><code>number</code></td>
+                    <td class="method">The height of the <code>Camera</code></td>
+                </tr>
+                <tr href="#camera">
+                    <td class="method">main</td>
+                    <td><code>boolean</code></td>
+                    <td class="method">Set the <code>Camera</code> as main</td>
+                </tr>
+                <tr href="#camera">
+                    <td class="method">background</td>
+                    <td><code>string</code></td>
+                    <td class="method">The background color</td>
+                </tr>
+                <tr href="#camera">
+                    <td class="method">max_x</td>
+                    <td><code>number</code></td>
+                    <td class="method">The x-limit for the camera's position</td>
+                </tr>
+                <tr href="#camera">
+                    <td class="method">max_y</td>
+                    <td><code>number</code></td>
+                    <td class="method">The y-limit for the camera's position</td>
+                </tr>
+            </table>
+
+            <br />
+
+            <span class="menu-title">Properties</span>
+            <br />
+            <br />
+            <table>
+                <tr id="table-header">
+                    <th>Name</th>
+                    <th>Type</th> 
+                </tr>
+                <tr href="#camera-main">
+                    <td class="method">main</td>
+                    <td><code>Camera</code></td>
+                </tr>
+            </table>
+            
+            <h2>Properties</h2>
+
+            <h3 id="camera-main">Camera.main</h3>
+
+            <p>Get main <code href="#camera">Camera</code></p>
+
+            <span class="menu-title">Example</span>
+
+<pre>
+import { Camera } from '/src/core/camera.js';
+
+const camera = new Object('Viewport', 0, 0, canvas.clientWidth, canvas.clientHeight)
+    .addComponent(new Camera('#272727'));
+
+const mainCamera = Camera.main;
+</pre>
+
+            <!-- SYSTEM -->
+
+            <h2 id="system"><mark>static</mark> System</h2>
+            <!--<span class="version">version 0.2.1</span>-->
+            <hr />
+
+            <p>Core system sync of the engine</p>
+
+            <span class="menu-title">Properties</span>
+            <br />
+            <br />
+            <table>
+                <tr id="table-header">
+                    <th>Name</th>
+                    <th>Type</th> 
+                </tr>
+                <tr href="#system-events">
+                    <td class="method">events</td>
+                    <td><code>Array</code></td>
+                </tr>
+            </table>
+
+            <br />
+
+            <span class="menu-title">Methods</span>
+            <br />
+            <br />
+            <table>
+                <tr id="table-header">
+                    <th>Name</th>
+                    <th>Return</th>
+                </tr>
+                <tr href="#system-createID">
+                    <td class="method">createID()</td>
+                    <td><code>string</code></td>
+                </tr>
+                <tr href="#system-random">
+                    <td class="method">random(a: <code>number</code>, b: <code>number</code>)</td>
+                    <td><code>number</code></td>
+                </tr>
+                <tr href="#system-sync">
+                    <td class="method">sync(component: <code>Class</code>)</td>
+                    <td><code>void</code></td>
+                </tr>
+                <tr href="#system-dispatchEvent">
+                    <td class="method">dispatchEvent(event: <code>string</code>, data: <code>object</code>)</td>
+                    <td><code>void</code></td>
+                </tr>
+                <tr href="#system-addEventListener">
+                    <td class="method">addEventListener(event: <code>string</code>, fn: <code>Function</code>)</td>
+                    <td><code>void</code></td>
+                </tr>
+            </table>
+            
+            <h2>Properties</h2>
+
+            <h3 id="system-events">System.events</h3>
+
+            <p>Get system events list</p>
+
+            <p class="warning"><i class="fas fa-exclamation-circle"></i>Do not use this property directly.</p>
+
+            <h2>Methods</h2>
+
+            <h3 id="system-createID">System.createID</h3>
+
+            <p>Create unique ID</p>
+
+            <span class="menu-title">Example</span>
+
+<pre>
+import { System } from '/src/core/system.js';
+
+let obj = new Object();
+obj.id = System.createID(); // reset ID
+</pre>
+
+            <h3 id="system-random">System.random(a, b)</h3>
+
+            <p>Generate random number between a and b</p>
+
+            <span class="menu-title">Example</span>
+
+<pre>
+console.log(System.random(0, 100));
+</pre>
+
+            <h3 id="system-sync">System.sync(component)</h3>
+
+            <p>Synchronize a <code href="#component">component</code></p>
+
+            <p class="warning"><i class="fas fa-exclamation-circle"></i>Do not use this method directly.</p>
+
+            <h3 id="system-dispatchEvent">System.dispatchEvent(e, data)</h3>
+
+            <p>Dispatch event</p>
+
+            <span class="menu-title">Example</span>
+
+<pre>
+System.dispatchEvent('eventName', 'value');
+</pre>
+
+            <h3 id="system-addEventListener">System.addEventListener(e, fn)</h3>
+
+            <p>Listen event</p>
+
+            <span class="menu-title">Example</span>
+
+<pre>
+System.addEventListener('setProperty', data => {
+    data.object // return the object which is modified
+    data.prop // returns the changed property
+    data.value // returns the new property
+
+    if (data.object.components.collider)
+        if (data.prop === 'x' || data.prop === 'y')
+            // reset collisions
+}
 </pre>
 
             <!-- GRAPHICS -->
@@ -723,7 +1847,7 @@ o.draw = function() {
                 <canvas id="canvas-strokeWeight"></canvas>
             
             </aside>
-
+            
 
             <!-- KEYBOARD -->
 
@@ -739,7 +1863,7 @@ o.draw = function() {
                 <br />
                 <a href="#keyReleased" class="object">keyReleased</a>
                 <br />
-                <a href="#key" class="object">key</a>
+                <a href="#keys" class="object">keys</a>
             </p>
 
             <h3 id="keyPressed">keyPressed</h3>
@@ -766,11 +1890,10 @@ o.draw = function() {
             <aside class="example">
 
 <pre>
-var o = new Object();
-o.update = function() {
-    if(keyPressed) {
-        o.active = false;
-    }
+import { Keyboard } from '/src/input/keyboard.js';
+
+if (Keyboard.keyPressed) {
+    // do something
 }
 </pre>
                 
@@ -800,17 +1923,16 @@ o.update = function() {
             <span class="menu-title">Example</span>
 
 <pre>
-var o = new Object();
-o.update = function() {
-    if(keyReleased) {
-        o.active = true;
-    }
+import { Keyboard } from '/src/input/keyboard.js';
+
+if (Keyboard.keyReleased) {
+    // do something
 }
 </pre>
 
-            <h3 id="key">key</h3>
+            <h3 id="keys">keys</h3>
 
-            <p>The system variable key always contains the value of the most recent key on the keyboard that was typed.</p>
+            <p>The system variable keys always contains the value of all keys on the keyboard that was pressed.</p>
             
             <br />
 
@@ -830,12 +1952,19 @@ o.update = function() {
             <span class="menu-title">Example</span>
 
 <pre>
-var o = new Object();
-o.update = function() {
-    if(keyPressed) {
-        if(key === 'D') {
-            o.translate(1, 0);
-        }
+if (keyPressed) {
+    if (Keyboard.keys['d']) {
+        obj.translate(1, 0);
+    }
+}
+
+// or
+
+for (let key in Keyboard.keys) {
+    switch (key) {
+        case 'd':
+            obj.translate(1, 0);
+            break;
     }
 }
 </pre>
@@ -851,18 +1980,18 @@ o.update = function() {
             <span class="menu-title">Attributes</span>
             <br />
             <p class="objets">
-                <a href="#mousePressed" class="object">mousePressed</a>
+                <a href="#mousePressed" class="object">Mouse.down</a>
                 <br />
-                <a href="#mouseReleased" class="object">mouseReleased</a>
+                <a href="#mouseReleased" class="object">Mouse.up</a>
                 <br />
-                <a href="#mouseX" class="object">mouseX</a>
+                <a href="#mouseX" class="object">Mouse.x</a>
                 <br />
-                <a href="#mouseY" class="object">mouseY</a>
+                <a href="#mouseY" class="object">Mouse.y</a>
             </p>
 
-            <h3 id="mousePressed">mousePressed</h3>
+            <h3 id="mousePressed">Mouse.down</h3>
 
-            <p>The system variable <code>mousePressed</code> is <code>true</code> if the mouse is pressed and <code>false</code> if not.</p>
+            <p>The system variable <code>Mouse.down</code> is <code>true</code> if the mouse is pressed and <code>false</code> if not.</p>
             
             <br />
 
@@ -872,7 +2001,7 @@ o.update = function() {
                     <th>Type</th> 
                 </tr>
                 <tr>
-                    <td class="method">mousePressed</td>
+                    <td class="method">down</td>
                     <td class="method"><code>boolean</code></td>
                 </tr>
             </table>  
@@ -884,11 +2013,13 @@ o.update = function() {
             <aside class="example">
 
 <pre>
-var o = new Object();
-o.draw = function() {
-    if(mousePressed) {
-        circle(100, 100, 30);
-        fill('#666');
+import { Mouse } from '/src/input/mouse.js';
+
+let obj = new Object();
+obj.draw = function() {
+    if (Mouse.down) {
+        Graphics.circle(100, 100, 30);
+        Graphics.fill('black');
     }
 }
 </pre>
@@ -897,9 +2028,9 @@ o.draw = function() {
             
             </aside>
 
-            <h3 id="mouseReleased">mouseReleased</h3>
+            <h3 id="mouseReleased">Mouse.up</h3>
 
-            <p>The system variable <code>mouseReleased</code> is <code>true</code> if the mouse is released and <code>false</code> if not.</p>
+            <p>The system variable <code>Mouse.up</code> is <code>true</code> if the mouse is released and <code>false</code> if not.</p>
             
             <br />
 
@@ -909,7 +2040,7 @@ o.draw = function() {
                     <th>Type</th> 
                 </tr>
                 <tr>
-                    <td class="method">mouseReleased</td>
+                    <td class="method">Mouse.up</td>
                     <td class="method"><code>boolean</code></td>
                 </tr>
             </table>  
@@ -921,12 +2052,8 @@ o.draw = function() {
             <aside class="example">
 
 <pre>
-var o = new Object();
-o.draw = function() {
-    if(mouseReleased) {
-        circle(100, 100, 30);
-        fill('black');
-    }
+if (Mouse.up) {
+    // do something
 }
 </pre>
                 
@@ -934,9 +2061,9 @@ o.draw = function() {
             
             </aside>
 
-            <h3 id="mouseX">mouseX</h3>
+            <h3 id="mouseX">Mouse.x</h3>
 
-            <p>The system variable mouseX always contains the current horizontal position of the mouse, relative to (0, 0) of the canvas.</p>
+            <p>The system variable Mouse.x always contains the current horizontal position of the mouse, relative to (0, 0) of the canvas.</p>
             
             <br />
 
@@ -946,7 +2073,7 @@ o.draw = function() {
                     <th>Type</th> 
                 </tr>
                 <tr>
-                    <td class="method">mouseX</td>
+                    <td class="method">Mouse.x</td>
                     <td class="method"><code>number</code></td>
                 </tr>
             </table> 
@@ -958,18 +2085,18 @@ o.draw = function() {
             <aside class="example">
 
 <pre>
-var o = new Object();
-o.draw = function() {
-    line(mouseX, 0, mouseX, 100);
+let obj = new Object();
+obj.draw = function() {
+    Graphics.line(Mouse.x, 0, Mouse.x, 100);
 }
 </pre>
                 <canvas id="canvas-mouseX"></canvas>
 
             </aside>
             
-            <h3 id="mouseY">mouseY</h3>
+            <h3 id="mouseY">Mouse.y</h3>
 
-            <p>The system variable mouseY always contains the current vertical position of the mouse, relative to (0, 0) of the canvas.</p>
+            <p>The system variable Mouse.y always contains the current vertical position of the mouse, relative to (0, 0) of the canvas.</p>
             
             <br />
 
@@ -979,7 +2106,7 @@ o.draw = function() {
                     <th>Type</th> 
                 </tr>
                 <tr>
-                    <td class="method">mouseY</td>
+                    <td class="method">Mouse.y</td>
                     <td class="method"><code>number</code></td>
                 </tr>
             </table> 
@@ -991,14 +2118,140 @@ o.draw = function() {
             <aside class="example">
 
 <pre>
-var o = new Object();
-o.draw = function() {
-    line(0, 0, mouseX, mouseY);
+let obj = new Object();
+obj.draw = function() {
+    line(0, 0, Mouse.y, Mouse.y);
 }
 </pre>
             <canvas id="canvas-mouseY"></canvas>
 
-        </aside>
+            </aside>
+
+            <!-- DND -->
+
+            <h2 id="dnd"><mark>static</mark> Dnd</h2>
+            <hr />
+
+            <p>Static class to manage drag & drop</p>
+
+            <span class="menu-title">Properties</span>
+            <br />
+            <br />
+            <table>
+                <tr id="table-header">
+                    <th>Name</th>
+                    <th>Type</th> 
+                </tr>
+                <tr href="#dnd-draggedElement">
+                    <td class="method">draggedElement</td>
+                    <td><code>HTMLElement</code></td>
+                </tr>
+                <tr href="#dnd-drag">
+                    <td class="method">drag</td>
+                    <td><code>boolean</code></td>
+                </tr>
+                <tr href="#dnd-move">
+                    <td class="method">move</td>
+                    <td><code>boolean</code></td>
+                </tr>
+                <tr href="#dnd-hovering">
+                    <td class="method">hovering</td>
+                    <td><code>boolean</code></td>
+                </tr>
+                <tr href="#dnd-resize">
+                    <td class="method">resize</td>
+                    <td><code>boolean</code></td>
+                </tr>
+            </table>
+
+            <br />
+
+            <span class="menu-title">Methods</span>
+            <br />
+            <br />
+            <table>
+                <tr id="table-header">
+                    <th>Name</th>
+                    <th>Return</th>
+                </tr>
+                <tr href="#dnd-setCursor">
+                    <td class="method">setCursor(cursor: <code>string</code>)</td>
+                    <td><code>void</code></td>
+                </tr>
+                <tr href="#dnd-applyDragEvents">
+                    <td class="method">applyDragEvents(el: <code>HTMLElement</code>)</td>
+                    <td><code>void</code></td>
+                </tr>
+                <tr href="#dnd-applyDropEvents">
+                    <td class="method">applyDropEvents(el: <code>HTMLElement</code>)</td>
+                    <td><code>void</code></td>
+                </tr>
+            </table>
+            
+            <h2>Properties</h2>
+
+            <h3 id="dnd-draggedElement">Dnd.draggedElement</h3>
+
+            <p>Item being moved</p>
+
+            <span class="menu-title">Example</span>
+
+<pre>
+import { Dnd } from '/editor/system/dnd.js';
+
+Sorter.draggedElement = e.target;
+</pre>
+
+            <h3 id="dnd-drag">Dnd.drag</h3>
+
+            <p>Return true if mouse is down</p>
+
+            <h3 id="dnd-move">Dnd.move</h3>
+
+            <p>Return true if mouse is moving</p>
+
+            <h3 id="dnd-hovering">Dnd.hovering</h3>
+
+            <p>Return true if the mouse is over an object</p>
+
+            <h3 id="dnd-resize">Dnd.resize</h3>
+
+            <p>Return resize side</p>
+
+            <h2>Methods</h2>
+
+            <h3 id="dnd-setCursor">dnd.setCursor(cursor)</h3>
+
+            <p>Change the cursor</p>
+
+            <span class="menu-title">Example</span>
+
+<pre>
+import { Dnd } from '/editor/system/dnd.js';
+
+Dnd.setCursor('grabbing');
+</pre>
+
+            <h3 id="dnd-applyDragEvents">dnd.applyDragEvents(el)</h3>
+
+            <p>Apply a dragstart event on the element</p>
+
+            <span class="menu-title">Example</span>
+
+<pre>
+var clone = draggedElement.cloneNode(true);
+Dnd.applyDragEvents(clone);
+</pre>
+
+            <h3 id="dnd-applyDropEvents">dnd.applyDropEvents(el)</h3>
+
+            <p>Apply a drop event on the element</p>
+
+            <span class="menu-title">Example</span>
+
+<pre>
+Dnd.applyDropEvents(el);
+</pre>
 
         <br />
 
@@ -1006,9 +2259,9 @@ o.draw = function() {
     
     </main>
     
-    <script src="editor.js"></script>    
-    <script src="canvas.js"></script>
-    <script src="scroll.js"></script>
+    <script src="src/editor.js"></script>
+    <script src="src/canvas.js"></script>
+    <script src="src/scroll.js"></script>
     
 </body>
 

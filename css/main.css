@@ -1,0 +1,322 @@
+body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    font-family: 'Source Sans Pro', sans-serif;
+    background-color: white/*#fafafa*/;
+}
+
+#left-menu {
+    width: 240px;
+    position: fixed;
+    top: 0;
+    height: 100%;
+    float: left;
+    padding-left: 20px;
+    box-sizing: border-box;
+    color: #1e64ea;
+    background-color: #f4f5f7;
+    overflow-y: auto;
+}
+
+#doc {
+    margin-left: 300px;
+    padding-left: 30px;
+    padding-top: 50px;
+    width: 40%;
+}
+
+h1 {
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 2em;
+    margin: 0;
+}
+
+h2, h3 {
+    font-weight: 500;
+    margin-top: 40px;
+}
+
+h2 {
+    font-weight: 600;
+    font-size: 1.7em;
+}
+
+h3 {
+    font-weight: 600;
+    color: rgb(30, 100, 234);
+    font-size: 1.4em;
+}
+
+h3:before {
+    
+}
+
+
+
+ul {
+    list-style-type: none;
+    padding-left: 0px;
+    padding-top: 5px;
+}
+
+.anchor {
+    padding: 10px;
+    padding-left: 15px;
+    width: 94%;
+    border-left: 3px solid transparent;
+    color: #42526e;
+    box-sizing: border-box;
+}
+
+.anchor-warning {
+    padding: 10px;
+    padding-left: 15px;
+    width: 94%;
+    border-left: 3px solid transparent;
+    color: #42526e;
+    box-sizing: border-box;
+}
+
+.anchor-warning:hover {
+    background-color: rgba(249, 210, 216, 0.3) !important;
+    border-left: 3px solid #ff6666;
+}
+
+.anchor:hover {
+    background-color: #eaecf0;
+    border-left: 3px solid #1e64ea;
+}
+
+.menu-title {
+    font-weight: 700;
+    color: black;
+    text-transform: uppercase;
+    font-size: 0.9em;
+    margin-top: 10px;
+    display: inline-block;
+}
+
+a {
+    text-decoration: none;
+    color: rgb(30, 100, 234);
+}
+
+a:active {
+    /*color: rgb(0, 0, 238);*/
+}
+
+a:visited {
+    color: inherit;
+}
+
+.search {
+    width: 100%;
+    height: 50px;
+    background-color: #f0f2f6;
+}
+hr {
+    width: 400px;
+    height: 1px;
+    border: none;
+    background-color: #dddddd;
+    margin: 0 0;
+}
+
+.version {
+    color: rgba(0, 0, 0, 0.4);
+    font-weight: 400;
+    font-size: 0.875em;
+    font-style: italic;
+}
+
+.method {
+    color: #1e64ea;
+    letter-spacing: 0.05rem;
+    font-size: 14px;
+}
+
+header {
+    background-color: #296ce7;
+    width: 100%;
+    height: 43px;
+    position: fixed;
+}
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+table, th, td {
+    border: 1px solid #DDD;
+}
+
+th {
+    padding: 10px;
+    font-weight: normal;
+    font-weight: bold;
+}
+
+td {
+    padding: 10px;
+}
+
+tr:nth-child(odd) {
+    background-color: rgba(242, 242, 242, 0.4);
+}
+
+tr:hover {
+    background-color: rgba(30, 100, 234, 0.1);
+    cursor: pointer;
+}
+
+#menu {
+    height: 43px;
+    line-height: 43px;
+    font-family: 'Work Sans', sans-serif;
+    position: relative;
+    z-index: 3;
+}
+
+#menu ul {
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+    margin-left: 20px;
+}
+
+#menu ul li a {
+    color: rgba(255, 255, 255, 0.8);
+    text-transform: uppercase;
+    display: inline-block;
+    font-size: 0.8em;
+    margin-right: 40px;
+    margin-left: 40px;
+    transition: 300ms;
+}
+
+#menu ul li a:hover {
+    color: white;
+}
+
+#title {
+    font-size: 1.5em;
+    margin-right: 40px;
+    margin-left: 40px;
+}
+
+#login {
+    position: absolute;
+    right: 0px;
+}
+
+#menu .active {
+    color: white !important;
+}
+
+#menu-root .active {
+    color: rgb(30, 100, 234);
+    background-color: #eaecf0;
+    border-left: 3px solid #1e64ea;
+}
+
+code {
+    background-color: #f8f8f8;;
+    border: 1px dotted rgba(0, 0, 0, 0.1);
+    padding: 3px;
+    margin: 0 3px;
+    color: rgb(30, 100, 234);
+    font-size: 13px;
+}
+
+code:hover {
+    background-color: #eee;
+    cursor: pointer;
+}
+
+mark {
+    color: rgb(30, 100, 234);
+    background-color: transparent;
+}
+
+pre {
+    width: 100%;
+    background-color: #f8f8f8;
+    color: #454545;
+    padding: 20px;
+    box-sizing: border-box;
+    line-height: 1.5em;
+    font-weight: bold;
+}
+
+pre:hover {
+    cursor: text;
+}
+
+.warning {
+    background-color: rgba(249, 210, 216, 0.3) !important;
+    padding: 10px;
+    padding-left: 14px;
+    border-left: 3px solid #ff6666;
+}
+
+.warning:hover {
+    background-color: rgba(249, 210, 216, 0.3) !important;
+    cursor: auto;
+}
+
+.warning i {
+    color: #ff6666;
+}
+
+i {
+    margin-right: 10px;
+}
+
+#mouse-icon {
+    margin-left: 5px;
+}
+
+#table-header {
+    
+}
+
+.object {
+    font-size: 1.3em;
+}
+
+.object:hover {    
+    color: rgb(30, 100, 234);
+    border-bottom: 2px dashed rgb(30, 100, 234);
+}
+
+.objets {
+    line-height: 200%;
+}
+
+canvas {
+    position: absolute;
+    background-color: #c8c8c8;
+    height: 100%;
+    width: 300px;
+    left: calc(100% + 80px);;
+    top: 0;
+}
+
+aside {
+    
+}
+
+.example {
+    position: relative;
+    z-index: -1;
+}
+
+p {
+    line-height: 180%;
+}
